@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Follicle Labs — Research-Grade Hair Follicle Science</title>
+<meta name="description" content="Follicle Labs supplies research-grade MPC inhibitors for hair follicle stem cell research. JXL-069 Research Serum — the same mechanism as PP405, available now in Australia.">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #0d0d0d;
+    --bg2: #141414;
+    --bg3: #1a1a1a;
+    --teal: #00897b;
+    --teal-light: #00bfa5;
+    --text: #e8e8e8;
+    --text-dim: #888;
+    --border: #222;
+  }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; line-height: 1.7; }
+  a { color: var(--teal-light); text-decoration: none; }
+  a:hover { color: #fff; }
+
+  /* NAV */
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 2rem; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--bg); z-index: 100; }
+  .nav-logo { font-size: 1.2rem; font-weight: 700; letter-spacing: 0.08em; color: #fff; }
+  .nav-logo span { color: var(--teal); }
+  .nav-links { display: flex; gap: 2rem; }
+  .nav-links a { color: var(--text-dim); font-size: 0.9rem; letter-spacing: 0.04em; }
+  .nav-links a:hover { color: var(--text); }
+  .nav-cta { background: var(--teal); color: #fff !important; padding: 0.5rem 1.2rem; border-radius: 4px; font-weight: 600; }
+  .nav-cta:hover { background: var(--teal-light); color: #fff !important; }
+
+  /* HERO */
+  .hero { max-width: 1100px; margin: 0 auto; padding: 6rem 2rem 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .hero-badge { display: inline-block; background: rgba(0,137,123,0.15); border: 1px solid rgba(0,137,123,0.3); color: var(--teal-light); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.8rem; border-radius: 20px; margin-bottom: 1.5rem; }
+  .hero h1 { font-size: 3rem; font-weight: 800; line-height: 1.15; margin-bottom: 1.5rem; letter-spacing: -0.02em; }
+  .hero h1 span { color: var(--teal); }
+  .hero p { color: var(--text-dim); font-size: 1.1rem; margin-bottom: 2rem; max-width: 480px; }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary { background: var(--teal); color: #fff; padding: 0.85rem 2rem; border-radius: 4px; font-weight: 700; font-size: 0.95rem; letter-spacing: 0.03em; transition: background 0.2s; }
+  .btn-primary:hover { background: var(--teal-light); color: #fff; }
+  .btn-ghost { border: 1px solid var(--border); color: var(--text-dim); padding: 0.85rem 2rem; border-radius: 4px; font-weight: 600; font-size: 0.95rem; transition: border-color 0.2s, color 0.2s; }
+  .btn-ghost:hover { border-color: var(--teal); color: var(--teal-light); }
+
+  /* PRODUCT CARD in hero */
+  .product-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 2.5rem; }
+  .product-img { background: var(--bg3); border-radius: 8px; height: 200px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; font-size: 4rem; }
+  .product-badge { background: rgba(0,137,123,0.15); color: var(--teal-light); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.2rem 0.6rem; border-radius: 3px; display: inline-block; margin-bottom: 0.8rem; }
+  .product-card h2 { font-size: 1.4rem; font-weight: 700; margin-bottom: 0.3rem; }
+  .product-card .product-sub { color: var(--text-dim); font-size: 0.85rem; margin-bottom: 1rem; }
+  .product-price { font-size: 2rem; font-weight: 800; color: #fff; margin-bottom: 0.5rem; }
+  .product-price span { font-size: 0.9rem; color: var(--text-dim); font-weight: 400; }
+  .product-note { font-size: 0.8rem; color: var(--teal-light); margin-bottom: 1.5rem; }
+  .product-card .btn-primary { display: block; text-align: center; width: 100%; }
+
+  /* SCIENCE SECTION */
+  .section { padding: 5rem 2rem; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .section-label { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 1rem; }
+  .section h2 { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 1rem; }
+  .section p { color: var(--text-dim); max-width: 700px; margin-bottom: 3rem; font-size: 1.05rem; }
+  .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .feature { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; }
+  .feature-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+  .feature h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .feature p { color: var(--text-dim); font-size: 0.875rem; margin: 0; }
+
+  /* MECHANISM */
+  .mechanism { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .mechanism-inner { max-width: 1100px; margin: 0 auto; padding: 5rem 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .mechanism-steps { counter-reset: step; list-style: none; }
+  .mechanism-steps li { display: flex; gap: 1.2rem; margin-bottom: 2rem; }
+  .step-num { background: var(--teal); color: #fff; width: 2rem; height: 2rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; flex-shrink: 0; }
+  .step-content h4 { font-weight: 700; margin-bottom: 0.3rem; }
+  .step-content p { color: var(--text-dim); font-size: 0.875rem; margin: 0; }
+
+  /* STATS */
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+  .stat { text-align: center; padding: 2rem; background: var(--bg3); border-radius: 8px; border: 1px solid var(--border); }
+  .stat-num { font-size: 2.5rem; font-weight: 800; color: var(--teal-light); }
+  .stat-label { color: var(--text-dim); font-size: 0.875rem; margin-top: 0.3rem; }
+
+  /* EMAIL CAPTURE */
+  .email-section { background: linear-gradient(135deg, rgba(0,137,123,0.05) 0%, rgba(0,137,123,0.12) 100%); border: 1px solid rgba(0,137,123,0.2); border-radius: 12px; padding: 4rem; text-align: center; max-width: 700px; margin: 0 auto; }
+  .email-section h2 { font-size: 1.8rem; font-weight: 800; margin-bottom: 1rem; }
+  .email-section p { color: var(--text-dim); margin-bottom: 2rem; }
+  .email-form { display: flex; gap: 0.75rem; max-width: 480px; margin: 0 auto; }
+  .email-form input { flex: 1; background: var(--bg); border: 1px solid var(--border); color: var(--text); padding: 0.85rem 1rem; border-radius: 4px; font-size: 0.95rem; outline: none; }
+  .email-form input:focus { border-color: var(--teal); }
+  .email-form button { background: var(--teal); color: #fff; border: none; padding: 0.85rem 1.5rem; border-radius: 4px; font-weight: 700; cursor: pointer; font-size: 0.95rem; white-space: nowrap; }
+  .email-form button:hover { background: var(--teal-light); }
+  .email-small { font-size: 0.75rem; color: var(--text-dim); margin-top: 1rem; }
+
+  /* BLOG */
+  .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .blog-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+  .blog-card-img { background: var(--bg3); height: 160px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; }
+  .blog-card-body { padding: 1.2rem; }
+  .blog-card-tag { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.5rem; }
+  .blog-card h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.5rem; line-height: 1.4; }
+  .blog-card p { color: var(--text-dim); font-size: 0.8rem; }
+  .blog-card a { color: inherit; }
+  .blog-card a:hover h3 { color: var(--teal-light); }
+
+  /* FOOTER */
+  footer { border-top: 1px solid var(--border); padding: 3rem 2rem; }
+  .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem; flex-wrap: wrap; }
+  .footer-brand h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .footer-brand p { color: var(--text-dim); font-size: 0.8rem; max-width: 280px; }
+  .footer-links h4 { font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 0.8rem; }
+  .footer-links ul { list-style: none; }
+  .footer-links ul li { margin-bottom: 0.5rem; }
+  .footer-links ul li a { color: var(--text-dim); font-size: 0.875rem; }
+  .footer-links ul li a:hover { color: var(--text); }
+  .footer-bottom { border-top: 1px solid var(--border); margin-top: 2rem; padding-top: 1.5rem; max-width: 1100px; margin-left: auto; margin-right: auto; text-align: center; }
+  .footer-bottom p { color: var(--text-dim); font-size: 0.75rem; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .hero { grid-template-columns: 1fr; padding: 3rem 1.5rem 2rem; gap: 2rem; }
+    .hero h1 { font-size: 2rem; }
+    .features { grid-template-columns: 1fr; }
+    .blog-grid { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: 1fr; }
+    .mechanism-inner { grid-template-columns: 1fr; padding: 3rem 1.5rem; }
+    .email-form { flex-direction: column; }
+    .email-section { padding: 2.5rem 1.5rem; }
+    .nav-links { display: none; }
+    .footer-inner { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">FOLLICLE<span>LABS</span></div>
+  <div class="nav-links">
+    <a href="/blog/">Research</a>
+    <a href="/product.html">Products</a>
+    <a href="/about.html">About</a>
+    <a href="/product.html" class="nav-cta">Buy JXL-069</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">Research-Grade MPC Inhibitor</div>
+    <h1>The Science Behind <span>Follicle Reactivation</span></h1>
+    <p>JXL-069 targets the same mitochondrial pyruvate carrier mechanism as PP405 — the compound behind the most promising hair follicle stem cell research in decades. Available now for laboratory research.</p>
+    <div class="hero-actions">
+      <a href="/product.html" class="btn-primary">Order JXL-069 — $89 AUD</a>
+      <a href="/blog/" class="btn-ghost">Read the Research →</a>
+    </div>
+  </div>
+  <div class="hero-product">
+    <div class="product-card">
+      <div class="product-img">🧬</div>
+      <div class="product-badge">In Stock — Ships in 2–3 Days</div>
+      <h2>JXL-069 Research Serum</h2>
+      <div class="product-sub">30mL topical spray · 0.05% concentration · Research use only</div>
+      <div class="product-price">$89 AUD <span>+ free shipping AU</span></div>
+      <div class="product-note">⚡ Backorders accepted — limited batch quantity</div>
+      <a href="/product.html" class="btn-primary">Add to Cart</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="section-label">The Mechanism</div>
+    <h2>Why MPC Inhibition Changes Everything</h2>
+    <p>Minoxidil extends the growth phase. Finasteride slows DHT. Neither can reactivate a dormant follicle. MPC inhibition targets the metabolic switch inside the stem cell itself.</p>
+    <div class="features">
+      <div class="feature">
+        <div class="feature-icon">🔬</div>
+        <h3>Stem Cell Activation</h3>
+        <p>JXL-069 inhibits the mitochondrial pyruvate carrier (MPC), shifting hair follicle stem cells from quiescence toward activation — the same mechanism validated in the PP405 Phase 2a trial.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">⚗️</div>
+        <h3>Third-Party Verified Purity</h3>
+        <p>Every batch comes with a Certificate of Analysis from an independent Australian lab. HPLC purity ≥98%. No fillers. No undisclosed compounds. Research-grade means research-grade.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🇦🇺</div>
+        <h3>Australia-First Supply</h3>
+        <p>Formulated and dispatched from Australian facilities. Ships within 2–3 business days. No international customs delays, no uncertainty about what arrives.</p>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-num">31%</div>
+        <div class="stat-label">of PP405 trial participants showed &gt;20% hair density increase at week 8</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">0.05%</div>
+        <div class="stat-label">JXL-069 concentration — matched to MPC inhibition research protocols</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">NCT06393452</div>
+        <div class="stat-label">Registered clinical trial — Phase 2a PP405 data on ClinicalTrials.gov</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="mechanism">
+  <div class="mechanism-inner">
+    <div>
+      <div class="section-label">How It Works</div>
+      <h2>The MPC Inhibition Pathway</h2>
+      <p style="color:#888;margin-bottom:2rem;">Understanding the mechanism is the first step to understanding why this class of compounds generates serious scientific interest.</p>
+    </div>
+    <ul class="mechanism-steps">
+      <li>
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h4>Follicle Stem Cells Enter Quiescence</h4>
+          <p>High MPC activity keeps hair follicle stem cells (HFSCs) in a dormant state. Dormant follicles do not produce hair. This is the problem minoxidil cannot solve.</p>
+        </div>
+      </li>
+      <li>
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h4>JXL-069 Inhibits the MPC</h4>
+          <p>Applied topically, JXL-069 inhibits the mitochondrial pyruvate carrier — the metabolic gatekeeper that keeps HFSCs quiescent. This shifts cellular energy metabolism toward glycolysis.</p>
+        </div>
+      </li>
+      <li>
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h4>Stem Cells Activate</h4>
+          <p>The metabolic shift triggers HFSC activation. Activated stem cells re-enter the hair growth cycle. Dormant follicles begin producing hair again.</p>
+        </div>
+      </li>
+      <li>
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <h4>Observable Results</h4>
+          <p>In PP405 trials, measurable hair density increases were observed at week 8 with only 4 weeks of active treatment. Results persisted beyond the active treatment window.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="section-label">Research Library</div>
+    <h2>The Science, Explained</h2>
+    <p>No hype. No before-and-after photos. Just the research — what it shows, what it doesn't, and what it means for MPC inhibition as a research tool.</p>
+    <div class="blog-grid">
+      <div class="blog-card">
+        <a href="/blog/what-is-pp405.html">
+          <div class="blog-card-img">🧬</div>
+          <div class="blog-card-body">
+            <div class="blog-card-tag">Science</div>
+            <h3>What is PP405? The Hair Loss Treatment Getting Serious Scientific Attention</h3>
+            <p>The Phase 2a data, UCLA origins, and why MPC inhibition is different from anything in the current treatment landscape.</p>
+          </div>
+        </a>
+      </div>
+      <div class="blog-card">
+        <a href="/blog/jxl069-vs-minoxidil.html">
+          <div class="blog-card-img">⚖️</div>
+          <div class="blog-card-body">
+            <div class="blog-card-tag">Comparison</div>
+            <h3>JXL-069 vs Minoxidil: Which Is Better for Hair Regrowth?</h3>
+            <p>A mechanistic comparison. Different targets, different limitations, different potential use cases.</p>
+          </div>
+        </a>
+      </div>
+      <div class="blog-card">
+        <a href="/blog/where-to-buy-jxl069-australia.html">
+          <div class="blog-card-img">🇦🇺</div>
+          <div class="blog-card-body">
+            <div class="blog-card-tag">Sourcing</div>
+            <h3>Where to Buy JXL-069 in Australia (2026 Guide)</h3>
+            <p>What to check before ordering: purity, CoA, concentration, and red flags to avoid.</p>
+          </div>
+        </a>
+      </div>
+      <div class="blog-card">
+        <a href="/blog/jxl069-dosing-protocol.html">
+          <div class="blog-card-img">⚗️</div>
+          <div class="blog-card-body">
+            <div class="blog-card-tag">Protocol</div>
+            <h3>How to Use JXL-069 — Dosing Protocol for Hair Loss Research</h3>
+            <p>Application steps, timing, stacking combinations, and the research timeline for observable changes.</p>
+          </div>
+        </a>
+      </div>
+      <div class="blog-card">
+        <a href="/blog/pp405-trial-results.html">
+          <div class="blog-card-img">📊</div>
+          <div class="blog-card-body">
+            <div class="blog-card-tag">Clinical Data</div>
+            <h3>PP405 Phase 2a Trial Results — What the Science Actually Shows</h3>
+            <p>78 participants, 4 weeks treatment, 31% showing &gt;20% hair density increase. A proper breakdown of the data.</p>
+          </div>
+        </a>
+      </div>
+      <div class="blog-card" style="background:linear-gradient(135deg,rgba(0,137,123,0.05),rgba(0,137,123,0.12));border-color:rgba(0,137,123,0.2);">
+        <a href="/blog/">
+          <div class="blog-card-img" style="background:transparent;">→</div>
+          <div class="blog-card-body">
+            <div class="blog-card-tag">Research Library</div>
+            <h3>View All Research Posts</h3>
+            <p>Full archive of mechanistic breakdowns, sourcing guides, and clinical data analysis.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="email-section">
+      <h2>Stay Ahead of the Research</h2>
+      <p>We publish mechanistic breakdowns and sourcing updates before anyone else. No noise, no marketing fluff — just the science as it develops.</p>
+      <form class="email-form" onsubmit="handleSignup(event)">
+        <input type="email" placeholder="your@email.com" required id="email-input">
+        <button type="submit">Get Research Updates</button>
+      </form>
+      <p class="email-small">No spam. Unsubscribe any time. Research updates only.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>FOLLICLE LABS</h3>
+      <p>Research-grade MPC inhibitors for hair follicle stem cell science. Australian supply chain. Third-party verified.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Products</h4>
+      <ul>
+        <li><a href="/product.html">JXL-069 Research Serum</a></li>
+        <li><a href="/product.html">Order</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Research</h4>
+      <ul>
+        <li><a href="/blog/what-is-pp405.html">What is PP405?</a></li>
+        <li><a href="/blog/jxl069-vs-minoxidil.html">JXL-069 vs Minoxidil</a></li>
+        <li><a href="/blog/pp405-trial-results.html">Phase 2a Trial Results</a></li>
+        <li><a href="/blog/">All Posts</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="/about.html">About Follicle Labs</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Follicle Labs. JXL-069 is sold for laboratory research purposes only. Not for human consumption. Not TGA approved. This website does not constitute medical advice.</p>
+  </div>
+</footer>
+
+<script>
+function handleSignup(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('button');
+  btn.textContent = '✓ Subscribed!';
+  btn.style.background = '#00bfa5';
+  e.target.querySelector('input').value = '';
+  setTimeout(() => { btn.textContent = 'Get Research Updates'; btn.style.background = ''; }, 3000);
+}
+</script>
+</body>
+</html>
