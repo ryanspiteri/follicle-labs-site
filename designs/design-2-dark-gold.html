@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MPC-1 Research Serum | Follicle Labs</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --dark: #0a0a0a;
+    --dark-2: #111111;
+    --dark-3: #1a1a1a;
+    --gold: #c9a84c;
+    --gold-light: #e0c070;
+    --gold-dim: rgba(201,168,76,0.15);
+    --white: #ffffff;
+    --off-white: #f0ece4;
+    --grey: #888880;
+    --font: Georgia, 'Times New Roman', serif;
+    --sans: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font);
+    background: var(--dark);
+    color: var(--off-white);
+    line-height: 1.7;
+  }
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 0 40px;
+    height: 72px;
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(10,10,10,0.95);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+    backdrop-filter: blur(12px);
+  }
+  .nav-logo {
+    font-family: var(--font);
+    font-size: 18px; font-weight: 400;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--gold);
+  }
+  .nav-right {
+    font-family: var(--sans);
+    font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(201,168,76,0.5);
+  }
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    text-align: center;
+    padding: 120px 40px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 50% at 50% 40%, rgba(201,168,76,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .gold-line {
+    width: 40px; height: 1px; background: var(--gold); margin: 0 auto 32px;
+  }
+  .hero-label {
+    font-family: var(--sans);
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 24px;
+  }
+  h1 {
+    font-size: clamp(42px, 7vw, 80px);
+    font-weight: 400; letter-spacing: 0.04em;
+    color: var(--off-white); line-height: 1.1;
+    margin-bottom: 10px;
+  }
+  .h1-sub {
+    font-size: clamp(14px, 2vw, 18px);
+    font-family: var(--sans); font-weight: 300;
+    letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 32px;
+  }
+  .hero-tagline {
+    font-size: clamp(15px, 2vw, 18px);
+    font-style: italic; color: rgba(240,236,228,0.6);
+    max-width: 520px; margin: 0 auto 48px;
+    line-height: 1.8;
+  }
+  .hero-price-wrap { margin-bottom: 36px; }
+  .hero-price {
+    font-family: var(--sans);
+    font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--grey); margin-bottom: 6px;
+  }
+  .hero-amount { font-size: 42px; font-weight: 400; color: var(--gold); letter-spacing: 0.02em; }
+  .hero-amount span { font-size: 16px; color: var(--grey); }
+  .btn-gold {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--dark);
+    font-family: var(--sans);
+    font-size: 13px; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; text-decoration: none;
+    padding: 18px 52px;
+    border: none; cursor: pointer;
+    transition: background 0.25s;
+  }
+  .btn-gold:hover { background: var(--gold-light); }
+  /* DIVIDER */
+  .ornament { text-align: center; padding: 32px 40px; color: var(--gold); font-size: 20px; letter-spacing: 0.4em; }
+  /* SECTION */
+  section { padding: 96px 40px; }
+  .container { max-width: 860px; margin: 0 auto; }
+  .section-tag {
+    font-family: var(--sans);
+    font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 16px;
+  }
+  h2 {
+    font-size: clamp(28px, 4.5vw, 48px);
+    font-weight: 400; letter-spacing: 0.04em;
+    color: var(--off-white); margin-bottom: 20px; line-height: 1.2;
+  }
+  .body-text { font-size: 17px; color: rgba(240,236,228,0.6); line-height: 1.8; margin-bottom: 48px; }
+  /* MECHANISM CARDS */
+  .mech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; background: rgba(201,168,76,0.15); }
+  .mech-card {
+    background: var(--dark-2);
+    padding: 36px 28px;
+  }
+  .mech-icon {
+    width: 32px; height: 32px; border: 1px solid var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 20px; color: var(--gold); font-size: 14px; font-family: var(--sans);
+  }
+  .mech-card h3 {
+    font-size: 16px; font-weight: 400; letter-spacing: 0.06em;
+    color: var(--gold); margin-bottom: 12px; font-family: var(--sans); text-transform: uppercase;
+  }
+  .mech-card p { font-size: 14px; color: rgba(240,236,228,0.5); line-height: 1.7; font-family: var(--sans); }
+  /* DATA SECTION */
+  .data-bg { background: var(--dark-2); }
+  .data-feature {
+    display: grid; grid-template-columns: 1fr 2fr; gap: 48px; align-items: center;
+    background: var(--dark-3); border: 1px solid rgba(201,168,76,0.2); padding: 48px;
+    margin-bottom: 24px;
+  }
+  .data-num { font-size: 72px; font-weight: 400; color: var(--gold); line-height: 1; font-family: var(--font); }
+  .data-unit { font-family: var(--sans); font-size: 13px; color: var(--grey); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 8px; }
+  .data-right h3 { font-size: 20px; font-weight: 400; color: var(--off-white); margin-bottom: 12px; }
+  .data-right p { font-size: 14px; color: rgba(240,236,228,0.5); line-height: 1.7; font-family: var(--sans); }
+  .data-note { font-family: var(--sans); font-size: 12px; color: rgba(240,236,228,0.3); font-style: italic; margin-top: 20px; }
+  /* CTA */
+  .cta-bg {
+    background: var(--dark-3);
+    border-top: 1px solid rgba(201,168,76,0.2);
+  }
+  .cta-inner { text-align: center; }
+  .waitlist-label {
+    font-family: var(--sans); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 20px;
+  }
+  .waitlist-form { display: flex; gap: 0; max-width: 440px; margin: 0 auto 48px; }
+  .waitlist-form input[type="email"] {
+    flex: 1;
+    padding: 16px 20px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(201,168,76,0.3); border-right: none;
+    color: var(--off-white); font-size: 14px; font-family: var(--sans);
+    outline: none;
+  }
+  .waitlist-form input[type="email"]::placeholder { color: rgba(240,236,228,0.3); }
+  .waitlist-form input[type="email"]:focus { border-color: var(--gold); }
+  .btn-gold-sm {
+    background: var(--gold); color: var(--dark);
+    font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; padding: 16px 24px;
+    border: none; cursor: pointer; white-space: nowrap;
+    transition: background 0.2s;
+  }
+  .btn-gold-sm:hover { background: var(--gold-light); }
+  .cta-divider { width: 40px; height: 1px; background: rgba(201,168,76,0.3); margin: 0 auto 48px; }
+  .cta-price { font-size: 48px; font-weight: 400; color: var(--gold); margin-bottom: 8px; }
+  .cta-price-sub { font-family: var(--sans); font-size: 13px; color: var(--grey); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 32px; }
+  /* FOOTER */
+  footer { background: #050505; padding: 40px; text-align: center; border-top: 1px solid rgba(201,168,76,0.1); }
+  .footer-logo { font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(201,168,76,0.4); margin-bottom: 20px; }
+  .disclaimer { font-family: var(--sans); font-size: 11px; color: rgba(255,255,255,0.2); max-width: 680px; margin: 0 auto; line-height: 1.8; }
+  .disclaimer strong { color: rgba(255,255,255,0.35); }
+  /* RESPONSIVE */
+  @media (max-width: 640px) {
+    nav { padding: 0 20px; }
+    section { padding: 72px 20px; }
+    .hero { padding: 100px 20px 72px; }
+    .data-feature { grid-template-columns: 1fr; gap: 24px; padding: 32px 24px; }
+    .waitlist-form { flex-direction: column; }
+    .waitlist-form input[type="email"] { border-right: 1px solid rgba(201,168,76,0.3); border-bottom: none; }
+    footer { padding: 32px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Follicle Labs</div>
+  <div class="nav-right">Research Grade</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-label">Australia's First</div>
+  <div class="gold-line"></div>
+  <h1>MPC-1</h1>
+  <div class="h1-sub">Research Serum</div>
+  <p class="hero-tagline">Same mechanism as PP405. First in Australia. An MPC Inhibitor formulated for hair follicle stem cell research.</p>
+  <div class="hero-price-wrap">
+    <div class="hero-price">30mL / Research Unit</div>
+    <div class="hero-amount">$89 AUD <span>/ unit</span></div>
+  </div>
+  <a href="#order" class="btn-gold">Pre-Order Now &mdash; Ships from Australia</a>
+</section>
+
+<div class="ornament">* * *</div>
+
+<!-- MECHANISM -->
+<section>
+  <div class="container">
+    <div class="section-tag">The Mechanism</div>
+    <h2>How MPC-1 works</h2>
+    <p class="body-text">MPC-1 is a selective inhibitor of the mitochondrial pyruvate carrier, a mechanism linked to the reactivation of quiescent hair follicle stem cells in emerging clinical research.</p>
+    <div class="mech-grid">
+      <div class="mech-card">
+        <div class="mech-icon">I</div>
+        <h3>MPC Inhibition</h3>
+        <p>Targets the mitochondrial pyruvate carrier to shift cellular metabolic state in follicle stem cells.</p>
+      </div>
+      <div class="mech-card">
+        <div class="mech-icon">II</div>
+        <h3>Stem Cell Waking</h3>
+        <p>Metabolic reprogramming of quiescent stem cells toward active proliferation.</p>
+      </div>
+      <div class="mech-card">
+        <div class="mech-icon">III</div>
+        <h3>Growth Phase</h3>
+        <p>Follicle stem cells re-enter anagen, supporting measurable increases in hair density.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DATA -->
+<section class="data-bg">
+  <div class="container">
+    <div class="section-tag">Phase 2a Research</div>
+    <h2>Clinical evidence</h2>
+    <p class="body-text">Independent Phase 2a trials on MPC inhibitor compounds have produced the following preliminary data.</p>
+    <div class="data-feature">
+      <div>
+        <div class="data-num">31%</div>
+        <div class="data-unit">of subjects</div>
+      </div>
+      <div class="data-right">
+        <h3>Greater than 20% increase in hair density</h3>
+        <p>Observed at 8-week follow-up in Phase 2a trial participants. MPC-1 Research Serum is formulated using the same compound class as PP405, which generated this clinical data.</p>
+        <p class="data-note">Data sourced from published Phase 2a research. MPC-1 Research Serum is not a therapeutic product and makes no therapeutic claims.</p>
+      </div>
+    </div>
+    <div class="data-feature">
+      <div>
+        <div class="data-num">8</div>
+        <div class="data-unit">weeks</div>
+      </div>
+      <div class="data-right">
+        <h3>Measurable results within 8 weeks</h3>
+        <p>Phase 2a endpoints were assessed at the 8-week mark, demonstrating that the MPC inhibitor mechanism produces observable follicle activity within a relatively short research window.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-bg" id="order">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="waitlist-label">Limited First Run</div>
+      <h2>Reserve your unit</h2>
+      <p class="body-text" style="max-width:480px;margin-left:auto;margin-right:auto;">Join the waitlist and be notified the moment MPC-1 Research Serum is available to ship.</p>
+      <form class="waitlist-form" onsubmit="return false;">
+        <input type="email" placeholder="Enter your email address">
+        <button type="submit" class="btn-gold-sm">Join Waitlist</button>
+      </form>
+      <div class="cta-divider"></div>
+      <div class="cta-price">$89 AUD</div>
+      <div class="cta-price-sub">30mL &bull; Ships from Australia</div>
+      <a href="#" class="btn-gold">Pre-Order Now &mdash; Ships from Australia</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Follicle Labs</div>
+  <p class="disclaimer"><strong>For laboratory research use only.</strong> MPC-1 Research Serum is not for human consumption. Not approved by the Therapeutic Goods Administration (TGA). This compound has not been evaluated for safety or efficacy in humans by any regulatory body. For use by qualified researchers only, in compliance with all applicable laws and regulations. This product does not constitute medical advice and should not be used in the diagnosis, treatment, or prevention of any condition. &copy; 2025 Follicle Labs Pty Ltd. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
