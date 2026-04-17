@@ -6,161 +6,185 @@
 <title>How to Use JXL-069 — Dosing Protocol for Hair Loss Research | Follicle Labs</title>
 <meta name="description" content="The standard JXL-069 dosing protocol for scalp research: how many sprays, application steps, timing, what to stack, and when to expect results.">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root { --bg: #0d0d0d; --bg2: #141414; --bg3: #1a1a1a; --teal: #00897b; --teal-light: #00bfa5; --text: #e8e8e8; --text-dim: #888; --border: #222; }
-  body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; line-height: 1.8; }
-  a { color: var(--teal-light); text-decoration: none; }
-  nav { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 2rem; border-bottom: 1px solid var(--border); }
-  .nav-logo { font-size: 1.2rem; font-weight: 700; letter-spacing: 0.08em; color: #fff; }
-  .nav-logo span { color: var(--teal); }
-  .nav-links { display: flex; gap: 2rem; }
-  .nav-links a { color: var(--text-dim); font-size: 0.9rem; }
-  .nav-cta { background: var(--teal); color: #fff !important; padding: 0.5rem 1.2rem; border-radius: 4px; font-weight: 600; }
-  .post-header { max-width: 800px; margin: 0 auto; padding: 4rem 2rem 2rem; }
-  .post-tag { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 1rem; }
-  .post-header h1 { font-size: 2.2rem; font-weight: 800; line-height: 1.25; margin-bottom: 1rem; letter-spacing: -0.01em; }
-  .post-meta { color: var(--text-dim); font-size: 0.85rem; }
-  .post-body { max-width: 800px; margin: 0 auto; padding: 2rem; }
-  .post-body h2 { font-size: 1.4rem; font-weight: 800; margin: 2.5rem 0 1rem; color: var(--text); }
-  .post-body h3 { font-size: 1.1rem; font-weight: 700; margin: 2rem 0 0.75rem; color: var(--text); }
-  .post-body p { color: var(--text-dim); margin-bottom: 1.2rem; }
-  .post-body ul, .post-body ol { padding-left: 1.5rem; margin-bottom: 1.2rem; }
-  .post-body li { color: var(--text-dim); margin-bottom: 0.4rem; }
-  .post-body strong { color: var(--text); }
-  .post-body table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.875rem; }
-  .post-body th { background: var(--bg2); padding: 0.75rem 1rem; text-align: left; border: 1px solid var(--border); font-weight: 700; color: var(--text); }
-  .post-body td { padding: 0.75rem 1rem; border: 1px solid var(--border); color: var(--text-dim); vertical-align: top; }
-  .post-body tr:nth-child(even) td { background: var(--bg2); }
-  .post-body blockquote { border-left: 3px solid var(--teal); padding-left: 1.5rem; margin: 1.5rem 0; }
-  .disclaimer { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 1.2rem 1.5rem; margin-top: 2rem; font-size: 0.8rem; color: var(--text-dim); }
-  .cta-block { background: linear-gradient(135deg,rgba(0,137,123,0.08),rgba(0,137,123,0.15)); border: 1px solid rgba(0,137,123,0.25); border-radius: 10px; padding: 2rem; text-align: center; margin: 2.5rem 0; }
-  .cta-block h3 { font-size: 1.2rem; margin-bottom: 0.75rem; }
-  .cta-block p { color: var(--text-dim); margin-bottom: 1.25rem; }
-  .btn-primary { background: var(--teal); color: #fff; padding: 0.8rem 1.8rem; border-radius: 4px; font-weight: 700; display: inline-block; }
-  .btn-primary:hover { background: var(--teal-light); color: #fff; }
-  hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
-  footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; margin-top: 4rem; }
-  footer p { color: var(--text-dim); font-size: 0.75rem; }
-  @media (max-width: 768px) { .post-header h1 { font-size: 1.7rem; } nav .nav-links { display: none; } }
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0a0a0a;color:#e2e8f0;line-height:1.7;font-size:16px}
+nav{background:#000;padding:16px 24px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #1a1a1a}
+.logo{font-size:16px;font-weight:700;color:#c9a84c;text-decoration:none}
+.nav-cta{background:#c9a84c;color:#000;padding:8px 16px;border-radius:4px;font-size:13px;font-weight:700;text-decoration:none}
+.container{max-width:760px;margin:0 auto;padding:48px 24px}
+h1{font-size:clamp(24px,4vw,38px);font-weight:800;color:#fff;margin-bottom:16px;line-height:1.2}
+h2{font-size:22px;font-weight:700;color:#c9a84c;margin:32px 0 12px}
+p{color:#94a3b8;margin-bottom:16px}
+ul{color:#94a3b8;padding-left:20px;margin-bottom:16px}
+li{margin-bottom:6px}
+strong{color:#e2e8f0}
+a{color:#c9a84c}
+table{width:100%;border-collapse:collapse;margin:16px 0}
+th{background:#111;padding:10px;text-align:left;color:#c9a84c;font-size:12px;text-transform:uppercase}
+td{padding:10px;border-bottom:1px solid #1a1a1a;color:#94a3b8}
+.cta-box{background:#111;border:1px solid #c9a84c40;border-radius:8px;padding:24px;margin:32px 0;text-align:center}
+.cta-box a{display:inline-block;background:#c9a84c;color:#000;padding:12px 28px;border-radius:4px;font-weight:700;text-decoration:none;margin-top:8px}
+footer{background:#000;padding:24px;text-align:center;color:#374151;font-size:12px;margin-top:48px;border-top:1px solid #1a1a1a}
 </style>
 </head>
 <body>
 <nav>
-  <a href="/" class="nav-logo">FOLLICLE<span>LABS</span></a>
-  <div class="nav-links">
-    <a href="/blog/">Research</a>
-    <a href="/product.html">Products</a>
-    <a href="/about.html">About</a>
-    <a href="/product.html" class="nav-cta">Buy JXL-069</a>
-  </div>
+  <a href="/" class="logo">Follicle Labs</a>
+  <a href="/#order" class="nav-cta">Pre-Order</a>
 </nav>
-<div class="post-header">
-  <div class="post-tag">Protocol</div>
-  <h1>How to Use JXL-069 — Dosing Protocol for Hair Loss Research</h1>
-  <div class="post-meta">Follicle Labs Research Library · April 2026</div>
-</div>
-<div class="post-body">
-<hr>
-<p>JXL-069 is a mitochondrial pyruvate carrier (MPC) inhibitor supplied as a topical spray for laboratory research purposes. Its mechanism involves activating quiescent hair follicle stem cells by shifting their metabolic state.</p>
-<p>For research on this mechanism to produce interpretable results, the application protocol must be consistent. Inconsistent application introduces variables that make it impossible to assess whether observed outcomes reflect the compound's mechanism or artefacts of how it was used.</p>
-<p>This post outlines the standard research protocol for JXL-069 topical application, common stacking combinations, and the timeline for cellular and observable changes based on available data.</p>
-<hr>
+<div class="container">
+<h1>How to Use JXL-069 — Dosing Protocol for Hair Loss Research</h1>
+
+<strong>Meta description:</strong> The standard JXL-069 dosing protocol for scalp research: how many sprays, application steps, timing, what to stack, and when to expect results.
+
+<strong>URL slug:</strong> /jxl069-dosing-protocol-hair-loss-research
+
+---
+
+JXL-069 is a mitochondrial pyruvate carrier (MPC) inhibitor supplied as a topical spray for laboratory research purposes. Its mechanism involves activating quiescent hair follicle stem cells by shifting their metabolic state.
+
+For research on this mechanism to produce interpretable results, the application protocol must be consistent. Inconsistent application introduces variables that make it impossible to assess whether observed outcomes reflect the compound's mechanism or artefacts of how it was used.
+
+This post outlines the standard research protocol for JXL-069 topical application, common stacking combinations, and the timeline for cellular and observable changes based on available data.
+
+---
+
 <h2>Understanding What JXL-069 Does Before You Apply It</h2>
-<p>JXL-069 does not work through a prolonged skin absorption mechanism like some lipid-soluble compounds. It targets the metabolic machinery of hair follicle stem cells (HFSCs). The relevant cells are located within the follicular unit, in the bulge region of the follicle.</p>
-<p>Topical delivery to the follicular unit requires the compound to penetrate beyond the stratum corneum and into the follicular canal. Scalp conditions at the time of application affect penetration efficiency. Clean, dry skin with no occlusive products creates the most direct access pathway.</p>
-<p>Ki67, a marker of cell proliferation, has been observed to activate in HFSCs within 24-48 hours of MPC inhibitor application in research models. This does not mean visible results appear in 24 hours. It means the cellular mechanism responds rapidly. Visible changes in hair density reflect follicle cycling, which operates on a weeks-to-months timeline.</p>
-<p>Understanding this distinction matters for research design. Early cellular markers can be assessed within days. Phenotypic (observable) outcomes require a longer assessment window.</p>
-<hr>
+
+JXL-069 does not work through a prolonged skin absorption mechanism like some lipid-soluble compounds. It targets the metabolic machinery of hair follicle stem cells (HFSCs). The relevant cells are located within the follicular unit, in the bulge region of the follicle.
+
+Topical delivery to the follicular unit requires the compound to penetrate beyond the stratum corneum and into the follicular canal. Scalp conditions at the time of application affect penetration efficiency. Clean, dry skin with no occlusive products creates the most direct access pathway.
+
+Ki67, a marker of cell proliferation, has been observed to activate in HFSCs within 24-48 hours of MPC inhibitor application in research models. This does not mean visible results appear in 24 hours. It means the cellular mechanism responds rapidly. Visible changes in hair density reflect follicle cycling, which operates on a weeks-to-months timeline.
+
+Understanding this distinction matters for research design. Early cellular markers can be assessed within days. Phenotypic (observable) outcomes require a longer assessment window.
+
+---
+
 <h2>Step-by-Step Application Protocol</h2>
-<h3>Step 1: Prepare the Scalp</h3>
-<p>Apply JXL-069 to a clean, dry scalp. Wash with a mild, residue-free shampoo and allow the scalp to dry fully before application. Do not apply over styling products, oils, or minoxidil solution applied in the same session.</p>
-<p>If combining with minoxidil (see stacking section below), apply JXL-069 first. Allow 20-30 minutes before applying any other topical compound. This ensures the carrier vehicle does not dilute or displace JXL-069 before absorption.</p>
-<h3>Step 2: Part the Hair</h3>
-<p>Use a fine-toothed comb or your fingers to part the hair in the target research area. Direct scalp access reduces compound loss to hair shafts. For vertex (crown) research, part from the centre outward. For frontal hairline zones, work from the recession points inward.</p>
-<h3>Step 3: Apply the Spray</h3>
-<p>Hold the spray nozzle approximately 2-3 cm from the scalp surface. Spray directly onto the scalp, not onto hair. Follicle Labs JXL-069 is supplied in a measured spray format. The standard research dose is:</p>
-<ul>
-<li><strong>2 sprays per application</strong></li>
+
+### Step 1: Prepare the Scalp
+
+Apply JXL-069 to a clean, dry scalp. Wash with a mild, residue-free shampoo and allow the scalp to dry fully before application. Do not apply over styling products, oils, or minoxidil solution applied in the same session.
+
+If combining with minoxidil (see stacking section below), apply JXL-069 first. Allow 20-30 minutes before applying any other topical compound. This ensures the carrier vehicle does not dilute or displace JXL-069 before absorption.
+
+### Step 2: Part the Hair
+
+Use a fine-toothed comb or your fingers to part the hair in the target research area. Direct scalp access reduces compound loss to hair shafts. For vertex (crown) research, part from the centre outward. For frontal hairline zones, work from the recession points inward.
+
+### Step 3: Apply the Spray
+
+Hold the spray nozzle approximately 2-3 cm from the scalp surface. Spray directly onto the scalp, not onto hair. Follicle Labs JXL-069 is supplied in a measured spray format. The standard research dose is:
+
+<ul><li><strong>2 sprays per application</strong></li>
 <li><strong>Applied to each target zone</strong> (crown, frontal zone, temporal zones independently if studying multiple areas)</li>
 <li><strong>Total: 4-6 sprays per session</strong> for full scalp research coverage</li>
 </ul>
-<p>Each spray delivers approximately 0.1mL. A 30mL bottle at standard protocol provides approximately 150 application sessions per target zone.</p>
-<h3>Step 4: Distribute and Absorb</h3>
-<p>After spraying, use clean fingertips to gently massage the applied area for 30-60 seconds. This distributes the compound across the follicular openings and supports penetration into the follicular canal. Do not rub vigorously. Gentle circular motions are sufficient.</p>
-<h3>Step 5: Allow to Dry</h3>
-<p>Allow the scalp to dry for 10-15 minutes before applying any other product, lying down, or putting on a hat. This prevents mechanical removal of the compound before absorption is complete.</p>
-<hr>
+Each spray delivers approximately 0.1mL. A 30mL bottle at standard protocol provides approximately 150 application sessions per target zone.
+
+### Step 4: Distribute and Absorb
+
+After spraying, use clean fingertips to gently massage the applied area for 30-60 seconds. This distributes the compound across the follicular openings and supports penetration into the follicular canal. Do not rub vigorously. Gentle circular motions are sufficient.
+
+### Step 5: Allow to Dry
+
+Allow the scalp to dry for 10-15 minutes before applying any other product, lying down, or putting on a hat. This prevents mechanical removal of the compound before absorption is complete.
+
+---
+
 <h2>Timing and Frequency</h2>
-<p>The standard research frequency is once daily, applied in the morning or evening. Consistency of timing matters more than which time of day is chosen.</p>
-<p>Morning application has the practical advantage of being easier to build into a routine and avoids any risk of compound transfer to pillowcases. Evening application after showering is also a common protocol, as scalp vasodilation during showering may support follicular access.</p>
-<p>Do not apply twice daily unless the research protocol specifically requires it. The MPC inhibition mechanism does not produce dose-dependent benefits in a linear fashion at higher-than-standard application frequencies based on current data.</p>
-<hr>
+
+The standard research frequency is once daily, applied in the morning or evening. Consistency of timing matters more than which time of day is chosen.
+
+Morning application has the practical advantage of being easier to build into a routine and avoids any risk of compound transfer to pillowcases. Evening application after showering is also a common protocol, as scalp vasodilation during showering may support follicular access.
+
+Do not apply twice daily unless the research protocol specifically requires it. The MPC inhibition mechanism does not produce dose-dependent benefits in a linear fashion at higher-than-standard application frequencies based on current data.
+
+---
+
 <h2>Stacking Protocols</h2>
-<p>JXL-069's mechanism is distinct from DHT inhibitors and vasodilatory agents. This makes multi-compound research protocols mechanistically rational. Each compound addresses a different pathway.</p>
-<h3>JXL-069 + Finasteride</h3>
-<p>Finasteride inhibits 5-alpha reductase, reducing DHT conversion. DHT-driven miniaturisation continues to degrade follicle quality even in follicles that MPC inhibition might otherwise reactivate. Including a DHT blocker addresses the hormonal driver while JXL-069 addresses stem cell quiescence.</p>
-<p>Application sequence: JXL-069 topical in the morning. Oral finasteride (if under medical supervision) on its standard dosing schedule. The two do not interact pharmacologically.</p>
-<h3>JXL-069 + Minoxidil</h3>
-<p>As covered in the mechanism comparison post, these compounds target different cellular populations. JXL-069 targets dormant HFSCs. Minoxidil extends the anagen phase in active follicles. Research on both mechanisms simultaneously provides coverage of the full follicle population spectrum.</p>
-<p>Application sequence: JXL-069 first. Wait 20-30 minutes. Apply minoxidil to the same zones. This prevents vehicle interference and allows JXL-069 to penetrate before the minoxidil solution alters the scalp environment.</p>
-<h3>JXL-069 + GHK-Cu (Copper Peptide)</h3>
-<p>GHK-Cu (glycyl-L-histidyl-L-lysine copper) is a copper peptide with documented roles in wound healing and tissue remodelling. In the scalp context, GHK-Cu has been studied for its effects on follicle ECM remodelling and its potential to support follicle regeneration by improving the dermal papilla microenvironment.</p>
-<p>GHK-Cu and JXL-069 operate at different levels. JXL-069 works intracellularly in stem cells. GHK-Cu works in the extracellular matrix and influences growth factor signalling. The combination is additive from a research perspective.</p>
-<p>Application sequence: JXL-069 first. GHK-Cu serum or peptide solution 30-60 minutes later, or applied in a separate session (morning/evening split is common in peptide research protocols).</p>
-<h3>Full Stack Protocol (Reference)</h3>
-<p>For researchers investigating the complete multi-pathway approach:</p>
-<table><thead><tr>
-<th>Time</th>
-<th>Compound</th>
-<th>Notes</th>
-</tr></thead><tbody>
-<tr>
-<td>Morning</td>
-<td>JXL-069 (2 sprays per zone)</td>
-<td>Clean dry scalp</td>
-</tr>
-<tr>
-<td>Morning +30 min</td>
-<td>Minoxidil 5%</td>
-<td>Standard application</td>
-</tr>
-<tr>
-<td>Evening</td>
-<td>GHK-Cu peptide serum</td>
-<td>Post-shower</td>
-</tr>
-<tr>
-<td>Daily (oral, if prescribed)</td>
-<td>Finasteride 1mg</td>
-<td>Medical supervision required</td>
-</tr>
-</tbody></table>
-<hr>
+
+JXL-069's mechanism is distinct from DHT inhibitors and vasodilatory agents. This makes multi-compound research protocols mechanistically rational. Each compound addresses a different pathway.
+
+### JXL-069 + Finasteride
+
+Finasteride inhibits 5-alpha reductase, reducing DHT conversion. DHT-driven miniaturisation continues to degrade follicle quality even in follicles that MPC inhibition might otherwise reactivate. Including a DHT blocker addresses the hormonal driver while JXL-069 addresses stem cell quiescence.
+
+Application sequence: JXL-069 topical in the morning. Oral finasteride (if under medical supervision) on its standard dosing schedule. The two do not interact pharmacologically.
+
+### JXL-069 + Minoxidil
+
+As covered in the mechanism comparison post, these compounds target different cellular populations. JXL-069 targets dormant HFSCs. Minoxidil extends the anagen phase in active follicles. Research on both mechanisms simultaneously provides coverage of the full follicle population spectrum.
+
+Application sequence: JXL-069 first. Wait 20-30 minutes. Apply minoxidil to the same zones. This prevents vehicle interference and allows JXL-069 to penetrate before the minoxidil solution alters the scalp environment.
+
+### JXL-069 + GHK-Cu (Copper Peptide)
+
+GHK-Cu (glycyl-L-histidyl-L-lysine copper) is a copper peptide with documented roles in wound healing and tissue remodelling. In the scalp context, GHK-Cu has been studied for its effects on follicle ECM remodelling and its potential to support follicle regeneration by improving the dermal papilla microenvironment.
+
+GHK-Cu and JXL-069 operate at different levels. JXL-069 works intracellularly in stem cells. GHK-Cu works in the extracellular matrix and influences growth factor signalling. The combination is additive from a research perspective.
+
+Application sequence: JXL-069 first. GHK-Cu serum or peptide solution 30-60 minutes later, or applied in a separate session (morning/evening split is common in peptide research protocols).
+
+### Full Stack Protocol (Reference)
+
+For researchers investigating the complete multi-pathway approach:
+
+| Time | Compound | Notes |
+|------|----------|-------|
+| Morning | JXL-069 (2 sprays per zone) | Clean dry scalp |
+| Morning +30 min | Minoxidil 5% | Standard application |
+| Evening | GHK-Cu peptide serum | Post-shower |
+| Daily (oral, if prescribed) | Finasteride 1mg | Medical supervision required |
+
+---
+
 <h2>Timeline: When to Expect Results</h2>
-<p>Research timelines based on the PP405 clinical programme and MPC inhibitor mechanism data:</p>
-<p><strong>24-48 hours:</strong> Ki67 activation detectable in HFSC populations in research models. This is cellular, not visible.</p>
-<p><strong>2-4 weeks:</strong> Hair shedding may be observed. This is a normal component of follicle cycling being triggered. Dormant follicles entering anagen shed the resting hair before new growth begins. Shedding at this stage is a mechanistically expected outcome, not a failure signal.</p>
-<p><strong>6-8 weeks:</strong> Visible density changes. In the PP405 Phase 2a trial (NCT06393452), measurable hair density increases were observed at the week 8 assessment point, with 31% of participants showing greater than 20% density improvement. Researchers should not assess outcomes before this window.</p>
-<p><strong>12+ weeks:</strong> Full assessment of response. The Phase 2a trial included a 12-week follow-up after the 4-week treatment period. Outcomes persisted beyond the active treatment window, suggesting durable changes in follicle biology rather than temporary stimulation effects.</p>
-<hr>
+
+Research timelines based on the PP405 clinical programme and MPC inhibitor mechanism data:
+
+<strong>24-48 hours:</strong> Ki67 activation detectable in HFSC populations in research models. This is cellular, not visible.
+
+<strong>2-4 weeks:</strong> Hair shedding may be observed. This is a normal component of follicle cycling being triggered. Dormant follicles entering anagen shed the resting hair before new growth begins. Shedding at this stage is a mechanistically expected outcome, not a failure signal.
+
+<strong>6-8 weeks:</strong> Visible density changes. In the PP405 Phase 2a trial (NCT06393452), measurable hair density increases were observed at the week 8 assessment point, with 31% of participants showing greater than 20% density improvement. Researchers should not assess outcomes before this window.
+
+<strong>12+ weeks:</strong> Full assessment of response. The Phase 2a trial included a 12-week follow-up after the 4-week treatment period. Outcomes persisted beyond the active treatment window, suggesting durable changes in follicle biology rather than temporary stimulation effects.
+
+---
+
 <h2>Frequently Asked Questions</h2>
-<p><strong>How many sprays of JXL-069 per application?</strong></p>
-<p>The standard research protocol is 2 sprays per target zone per session, applied once daily to a clean dry scalp. For full scalp coverage across crown and frontal zones, 4-6 sprays total per session is typical.</p>
-<p><strong>Can JXL-069 be used twice a day?</strong></p>
-<p>Twice-daily application is not supported by current MPC inhibitor research as producing additive benefit over once-daily protocols. Standard research dosing is once daily.</p>
-<p><strong>How long until JXL-069 shows results?</strong></p>
-<p>Cellular markers (Ki67 proliferation activity) are detectable within 24-48 hours in research models. Visible hair density changes are assessed at the 8-week mark based on PP405 Phase 2a trial data. Researchers should plan a minimum 12-week observation window.</p>
-<p><strong>Should I apply JXL-069 before or after minoxidil?</strong></p>
-<p>Apply JXL-069 first. Wait 20-30 minutes before applying minoxidil. This prevents vehicle interference and allows each compound independent absorption time.</p>
-<hr>
+
+<strong>How many sprays of JXL-069 per application?</strong>
+The standard research protocol is 2 sprays per target zone per session, applied once daily to a clean dry scalp. For full scalp coverage across crown and frontal zones, 4-6 sprays total per session is typical.
+
+<strong>Can JXL-069 be used twice a day?</strong>
+Twice-daily application is not supported by current MPC inhibitor research as producing additive benefit over once-daily protocols. Standard research dosing is once daily.
+
+<strong>How long until JXL-069 shows results?</strong>
+Cellular markers (Ki67 proliferation activity) are detectable within 24-48 hours in research models. Visible hair density changes are assessed at the 8-week mark based on PP405 Phase 2a trial data. Researchers should plan a minimum 12-week observation window.
+
+<strong>Should I apply JXL-069 before or after minoxidil?</strong>
+Apply JXL-069 first. Wait 20-30 minutes before applying minoxidil. This prevents vehicle interference and allows each compound independent absorption time.
+
+---
+
 <h2>Ready to Research JXL-069?</h2>
-<p>Follicle Labs supplies JXL-069 at 0.05% concentration in a 30mL measured spray format, designed for scalp research application.</p>
-<div class="cta-block"><h3>Ready to Research JXL-069?</h3><p>Follicle Labs supplies research-grade JXL-069 at 0.05% concentration — 30mL spray, $89 AUD, free AU shipping.</p><a href="/product.html" class="btn-primary">Order JXL-069 Research Serum →</a></div>
-<hr>
-<div class="disclaimer"><strong>Disclaimer:</strong> JXL-069 is sold for laboratory research purposes only. Not for human consumption. Not TGA approved. This protocol is provided for research guidance only and does not constitute medical advice. Finasteride and minoxidil are pharmaceutical products that should only be used under appropriate medical supervision. Consult a healthcare professional before using any compound for personal treatment of hair loss.</div>
+
+Follicle Labs supplies JXL-069 at 0.05% concentration in a 30mL measured spray format, designed for scalp research application.
+
+<a href="#">Shop JXL-069 Research Serum →</a>
+
+---
+
+<strong>Disclaimer:</strong> JXL-069 is sold for laboratory research purposes only. Not for human consumption. Not TGA approved. This protocol is provided for research guidance only and does not constitute medical advice. Finasteride and minoxidil are pharmaceutical products that should only be used under appropriate medical supervision. Consult a healthcare professional before using any compound for personal treatment of hair loss.
+
+<div class="cta-box">
+  <p style="color:#e2e8f0;font-weight:600">Ready to research JXL-069?</p>
+  <a href="https://newu.com.au/macro-calculator">Calculate your macros free with the NewU Macro Calculator</a>
 </div>
-<footer>
-  <p>© 2026 Follicle Labs · JXL-069 is for research use only · Not TGA approved · Not for human consumption · <a href="/blog/">Back to Research Library</a></p>
-</footer>
+</div>
+<footer>For laboratory research use only. Not for human consumption. Not TGA approved.</footer>
 </body>
 </html>
