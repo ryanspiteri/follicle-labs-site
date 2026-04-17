@@ -373,5 +373,97 @@ function handleSignup(e) {
   setTimeout(() => { btn.textContent = 'Get Research Updates'; btn.style.background = ''; }, 3000);
 }
 </script>
+
+<script>
+const NP_API_KEY = 'RE1H8G0-FQFMBME-HFC135K-K8JF91K';
+
+async function createNowPayment(amount_aud, currency, order_id, customer_email) {
+  try {
+    const response = await fetch('https://api.nowpayments.io/v1/payment', {
+      method: 'POST',
+      headers: {
+        'x-api-key': NP_API_KEY,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        price_amount: amount_aud,
+        price_currency: 'aud',
+        pay_currency: currency || 'usdttrc20',
+        order_id: order_id,
+        order_description: 'JXL-069 Research Serum - Follicle Labs',
+        ipn_callback_url: 'https://hairstemlab.com.au/ipn',
+        customer_email: customer_email,
+        is_fixed_rate: false
+      })
+    });
+    const data = await response.json();
+    return data;
+  } catch(e) {
+    console.error('Payment error:', e);
+    return null;
+  }
+}
+
+async function handlePreOrder(e) {
+  e.preventDefault();
+  const form = e.target;
+  const name = form.querySelector('[name="name"]').value;
+  const email = form.querySelector('[name="email"]').value;
+  const qty = form.querySelector('[name="quantity"]').value || '1';
+  
+  const amounts = {'1': 149, '3': 399, '6': 749};
+  const amount = amounts[qty] || 149;
+  const orderId = 'FL-' + Date.now();
+  
+  // Store in localStorage first
+  const orders = JSON.parse(localStorage.getItem('fl_orders') || '[]');
+  orders.push({name, email, qty, amount, orderId, date: new Date().toISOString()});
+  localStorage.setItem('fl_orders', JSON.stringify(orders));
+  
+  // Show loading
+  const btn = form.querySelector('button[type="submit"]');
+  btn.textContent = 'Creating payment...';
+  btn.disabled = true;
+  
+  // Create NowPayments payment
+  const payment = await createNowPayment(amount, 'usdttrc20', orderId, email);
+  
+  if (payment && payment.pay_address) {
+    // Show payment details
+    const container = form.closest('.order-section') || form.parentElement;
+    container.innerHTML = `
+      <div style="text-align:center;padding:40px 20px">
+        <div style="font-size:48px;margin-bottom:16px">✓</div>
+        <h3 style="color:#c9a84c;font-size:22px;margin-bottom:8px">Order Confirmed!</h3>
+        <p style="color:#94a3b8;margin-bottom:24px">Send payment to complete your order</p>
+        <div style="background:#111;border:1px solid #c9a84c40;border-radius:8px;padding:20px;margin-bottom:16px;text-align:left">
+          <p style="font-size:11px;color:#555;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">Send exactly:</p>
+          <p style="font-size:24px;font-weight:700;color:#c9a84c;margin-bottom:12px">${payment.pay_amount} ${payment.pay_currency?.toUpperCase()}</p>
+          <p style="font-size:11px;color:#555;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">To this address:</p>
+          <p style="font-size:12px;color:#e2e8f0;word-break:break-all;font-family:monospace;background:#0a0a0a;padding:10px;border-radius:4px">${payment.pay_address}</p>
+        </div>
+        <p style="font-size:12px;color:#555">Order ID: ${orderId}</p>
+        <p style="font-size:12px;color:#555;margin-top:8px">Confirmation email sent to ${email}</p>
+      </div>
+    `;
+  } else {
+    // Fallback - show success without payment link
+    btn.textContent = 'Pre-Order Placed!';
+    btn.style.background = '#22c55e';
+    const thanks = document.createElement('p');
+    thanks.style.cssText = 'color:#22c55e;margin-top:12px;text-align:center;font-weight:600';
+    thanks.textContent = "You're on the list! We'll contact you with payment details shortly.";
+    form.appendChild(thanks);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.querySelector('#preorder-form, form.preorder, .order-form');
+  if (form) {
+    form.addEventListener('submit', handlePreOrder);
+  }
+});
+</script>
+
 </body>
 </html>
