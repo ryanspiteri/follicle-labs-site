@@ -706,9 +706,41 @@ footer {
     font-size:12px;
   }
 }
+
+/* Global mobile overflow fix */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/* Fix pricing cards on mobile */
+@media(max-width: 640px) {
+  [style*="grid-template-columns: 1fr 1fr"],
+  [style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+  [style*="grid-template-columns: repeat(auto-fit"] {
+    grid-template-columns: 1fr !important;
+  }
+  [style*="repeat(auto-fit,minmax(240px"] {
+    grid-template-columns: 1fr !important;
+  }
+  [style*="repeat(auto-fit,minmax(200px"] {
+    grid-template-columns: 1fr !important;
+  }
+  /* Fix form grid */
+  [style*="grid-template-columns: 2fr 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+  [style*="grid-template-columns:2fr 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+}
 </style>
 </head>
-<body>
+<body style="overflow-x:hidden;max-width:100%;width:100%">
 
 <!-- NAV -->
 <nav>
