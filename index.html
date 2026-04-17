@@ -673,6 +673,12 @@ footer {
   .footer-inner { flex-direction: column; }
   .section { padding: 3rem 1.5rem; }
 }
+
+@media(max-width:640px){
+  .comparison-section .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .comparison-section table{min-width:500px;font-size:12px;}
+  .comparison-section th,.comparison-section td{padding:8px 10px;}
+}
 </style>
 </head>
 <body>
@@ -859,7 +865,7 @@ footer {
             <td>Oral tablet</td>
           </tr>
         </tbody>
-      </table>
+      </table></div>
     </div>
   </div>
 </section>
