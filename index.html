@@ -6,550 +6,1175 @@
 <title>Hairstemlab — Research-Grade Hair Follicle Science</title>
 <meta name="description" content="Hairstemlab supplies research-grade MPC inhibitors for hair follicle stem cell research. JXL-069 Research Serum — the same mechanism as PP405, available now in Australia.">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --bg: #0d0d0d;
-    --bg2: #141414;
-    --bg3: #1a1a1a;
-    --teal: #00897b;
-    --teal-light: #00bfa5;
-    --text: #e8e8e8;
-    --text-dim: #888;
-    --border: #222;
-  }
-  body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; line-height: 1.7; }
-  a { color: var(--teal-light); text-decoration: none; }
-  a:hover { color: #fff; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #0a0a0a;
+  --bg2: #111111;
+  --bg3: #1a1a1a;
+  --gold: #c9a84c;
+  --gold-light: #e0c070;
+  --text: #ffffff;
+  --text-dim: #94a3b8;
+  --text-muted: #555555;
+  --border: #1a1a1a;
+  --border2: #222222;
+  --green: #22c55e;
+}
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  line-height: 1.7;
+}
+a { color: var(--gold); text-decoration: none; }
+a:hover { color: var(--gold-light); }
 
-  /* NAV */
-  nav { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 2rem; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--bg); z-index: 100; }
-  .nav-logo { font-size: 1.2rem; font-weight: 700; letter-spacing: 0.08em; color: #fff; }
-  .nav-logo span { color: var(--teal); }
-  .nav-links { display: flex; gap: 2rem; }
-  .nav-links a { color: var(--text-dim); font-size: 0.9rem; letter-spacing: 0.04em; }
-  .nav-links a:hover { color: var(--text); }
-  .nav-cta { background: var(--teal); color: #fff !important; padding: 0.5rem 1.2rem; border-radius: 4px; font-weight: 600; }
-  .nav-cta:hover { background: var(--teal-light); color: #fff !important; }
+/* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 100;
+}
+.nav-logo {
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--gold);
+}
+.nav-links { display: flex; gap: 2rem; }
+.nav-links a {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+}
+.nav-links a:hover { color: var(--text); }
+.nav-cta {
+  background: var(--gold);
+  color: #000 !important;
+  padding: 0.5rem 1.3rem;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  transition: background 0.2s;
+}
+.nav-cta:hover { background: var(--gold-light); color: #000 !important; }
 
-  /* HERO */
-  .hero { max-width: 1100px; margin: 0 auto; padding: 6rem 2rem 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-  .hero-badge { display: inline-block; background: rgba(0,137,123,0.15); border: 1px solid rgba(0,137,123,0.3); color: var(--teal-light); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.8rem; border-radius: 20px; margin-bottom: 1.5rem; }
-  .hero h1 { font-size: 3rem; font-weight: 800; line-height: 1.15; margin-bottom: 1.5rem; letter-spacing: -0.02em; }
-  .hero h1 span { color: var(--teal); }
-  .hero p { color: var(--text-dim); font-size: 1.1rem; margin-bottom: 2rem; max-width: 480px; }
-  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
-  .btn-primary { background: var(--teal); color: #fff; padding: 0.85rem 2rem; border-radius: 4px; font-weight: 700; font-size: 0.95rem; letter-spacing: 0.03em; transition: background 0.2s; }
-  .btn-primary:hover { background: var(--teal-light); color: #fff; }
-  .btn-ghost { border: 1px solid var(--border); color: var(--text-dim); padding: 0.85rem 2rem; border-radius: 4px; font-weight: 600; font-size: 0.95rem; transition: border-color 0.2s, color 0.2s; }
-  .btn-ghost:hover { border-color: var(--teal); color: var(--teal-light); }
+/* HERO */
+.hero {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 5rem 2rem 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.hero-badge {
+  display: inline-block;
+  background: rgba(201,168,76,0.1);
+  border: 1px solid rgba(201,168,76,0.3);
+  color: var(--gold);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  margin-bottom: 1.5rem;
+}
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+}
+.hero h1 span { color: var(--gold); }
+.hero-sub {
+  color: var(--text-dim);
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+  max-width: 480px;
+}
+.hero-price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+.hero-rrp {
+  font-size: 1rem;
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
+.hero-amount {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text);
+}
+.hero-shipping {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.btn-primary {
+  background: var(--gold);
+  color: #000;
+  padding: 0.875rem 2rem;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  transition: background 0.2s;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+}
+.btn-primary:hover { background: var(--gold-light); color: #000; }
+.hero-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+.hero-note span { color: var(--gold); }
+.hero-visual {
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  border-radius: 12px;
+  padding: 2.5rem;
+  text-align: center;
+}
+.hero-vial { font-size: 5rem; margin-bottom: 1.5rem; }
+.hero-visual h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+.hero-visual .product-sub {
+  color: var(--text-dim);
+  font-size: 0.82rem;
+  margin-bottom: 1rem;
+}
+.hero-specs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  text-align: left;
+  margin-top: 1rem;
+}
+.hero-spec {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.hero-spec-label { color: var(--text-muted); }
+.hero-spec-value { color: var(--text-dim); font-weight: 600; }
 
-  /* PRODUCT CARD in hero */
-  .product-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 2.5rem; }
-  .product-img { background: var(--bg3); border-radius: 8px; height: 200px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; font-size: 4rem; }
-  .product-badge { background: rgba(0,137,123,0.15); color: var(--teal-light); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.2rem 0.6rem; border-radius: 3px; display: inline-block; margin-bottom: 0.8rem; }
-  .product-card h2 { font-size: 1.4rem; font-weight: 700; margin-bottom: 0.3rem; }
-  .product-card .product-sub { color: var(--text-dim); font-size: 0.85rem; margin-bottom: 1rem; }
-  .product-price { font-size: 2rem; font-weight: 800; color: #fff; margin-bottom: 0.5rem; }
-  .product-price span { font-size: 0.9rem; color: var(--text-dim); font-weight: 400; }
-  .product-note { font-size: 0.8rem; color: var(--teal-light); margin-bottom: 1.5rem; }
-  .product-card .btn-primary { display: block; text-align: center; width: 100%; }
+/* STATS BAR */
+.stats-bar {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg2);
+  padding: 3rem 2rem;
+}
+.stats-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  text-align: center;
+}
+.stat-num {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+.stat-label {
+  color: var(--text-dim);
+  font-size: 0.875rem;
+}
 
-  /* SCIENCE SECTION */
-  .section { padding: 5rem 2rem; }
-  .section-inner { max-width: 1100px; margin: 0 auto; }
-  .section-label { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 1rem; }
-  .section h2 { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 1rem; }
-  .section p { color: var(--text-dim); max-width: 700px; margin-bottom: 3rem; font-size: 1.05rem; }
-  .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-  .feature { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; }
-  .feature-icon { font-size: 1.8rem; margin-bottom: 1rem; }
-  .feature h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
-  .feature p { color: var(--text-dim); font-size: 0.875rem; margin: 0; }
+/* SECTIONS */
+.section { padding: 5rem 2rem; }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+.section h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+.section-desc {
+  color: var(--text-dim);
+  max-width: 680px;
+  margin-bottom: 3rem;
+  font-size: 1.05rem;
+}
+.section-border-top { border-top: 1px solid var(--border); }
 
-  /* MECHANISM */
-  .mechanism { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-  .mechanism-inner { max-width: 1100px; margin: 0 auto; padding: 5rem 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-  .mechanism-steps { counter-reset: step; list-style: none; }
-  .mechanism-steps li { display: flex; gap: 1.2rem; margin-bottom: 2rem; }
-  .step-num { background: var(--teal); color: #fff; width: 2rem; height: 2rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; flex-shrink: 0; }
-  .step-content h4 { font-weight: 700; margin-bottom: 0.3rem; }
-  .step-content p { color: var(--text-dim); font-size: 0.875rem; margin: 0; }
+/* HOW IT WORKS */
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.step-card {
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  border-radius: 10px;
+  padding: 1.8rem;
+}
+.step-num-badge {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: rgba(201,168,76,0.15);
+  border: 1px solid rgba(201,168,76,0.3);
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+.step-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+.step-card p { color: var(--text-dim); font-size: 0.875rem; }
 
-  /* STATS */
-  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
-  .stat { text-align: center; padding: 2rem; background: var(--bg3); border-radius: 8px; border: 1px solid var(--border); }
-  .stat-num { font-size: 2.5rem; font-weight: 800; color: var(--teal-light); }
-  .stat-label { color: var(--text-dim); font-size: 0.875rem; margin-top: 0.3rem; }
+/* RESEARCH DATA */
+.research-bg { background: var(--bg2); }
+.trial-info {
+  background: var(--bg);
+  border: 1px solid var(--border2);
+  border-radius: 10px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+.trial-badge {
+  display: inline-block;
+  background: rgba(201,168,76,0.1);
+  border: 1px solid rgba(201,168,76,0.25);
+  color: var(--gold);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.7rem;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+.trial-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.trial-stat {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  border-radius: 8px;
+}
+.trial-stat-num {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--gold);
+  margin-bottom: 0.3rem;
+}
+.trial-stat-label {
+  color: var(--text-dim);
+  font-size: 0.8rem;
+}
 
-  /* EMAIL CAPTURE */
-  .email-section { background: linear-gradient(135deg, rgba(0,137,123,0.05) 0%, rgba(0,137,123,0.12) 100%); border: 1px solid rgba(0,137,123,0.2); border-radius: 12px; padding: 4rem; text-align: center; max-width: 700px; margin: 0 auto; }
-  .email-section h2 { font-size: 1.8rem; font-weight: 800; margin-bottom: 1rem; }
-  .email-section p { color: var(--text-dim); margin-bottom: 2rem; }
-  .email-form { display: flex; gap: 0.75rem; max-width: 480px; margin: 0 auto; }
-  .email-form input { flex: 1; background: var(--bg); border: 1px solid var(--border); color: var(--text); padding: 0.85rem 1rem; border-radius: 4px; font-size: 0.95rem; outline: none; }
-  .email-form input:focus { border-color: var(--teal); }
-  .email-form button { background: var(--teal); color: #fff; border: none; padding: 0.85rem 1.5rem; border-radius: 4px; font-weight: 700; cursor: pointer; font-size: 0.95rem; white-space: nowrap; }
-  .email-form button:hover { background: var(--teal-light); }
-  .email-small { font-size: 0.75rem; color: var(--text-dim); margin-top: 1rem; }
+/* COMPARISON TABLE */
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.compare-table th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border2);
+}
+.compare-table th:first-child { width: 35%; }
+.compare-table th.gold-col { color: var(--gold); }
+.compare-table td {
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-dim);
+}
+.compare-table td:first-child { color: var(--text); font-weight: 600; font-size: 0.875rem; }
+.compare-table .good { color: var(--green); }
+.compare-table .bad { color: #ef4444; }
+.compare-table .ok { color: #f59e0b; }
+.compare-wrap {
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  border-radius: 10px;
+  overflow: hidden;
+}
 
-  /* BLOG */
-  .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-  .blog-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
-  .blog-card-img { background: var(--bg3); height: 160px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; }
-  .blog-card-body { padding: 1.2rem; }
-  .blog-card-tag { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.5rem; }
-  .blog-card h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.5rem; line-height: 1.4; }
-  .blog-card p { color: var(--text-dim); font-size: 0.8rem; }
-  .blog-card a { color: inherit; }
-  .blog-card a:hover h3 { color: var(--teal-light); }
+/* COA */
+.coa-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.coa-card {
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+}
+.coa-val {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--gold);
+  margin-bottom: 0.3rem;
+}
+.coa-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+.coa-table-wrap {
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.coa-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+.coa-table th {
+  padding: 0.7rem 1rem;
+  text-align: left;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border2);
+}
+.coa-table td {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-dim);
+}
+.coa-table td:first-child { color: var(--text); }
+.coa-table .pass { color: var(--green); font-weight: 600; }
+.coa-note {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  margin-top: 1rem;
+}
 
-  /* FOOTER */
-  footer { border-top: 1px solid var(--border); padding: 3rem 2rem; }
-  .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem; flex-wrap: wrap; }
-  .footer-brand h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
-  .footer-brand p { color: var(--text-dim); font-size: 0.8rem; max-width: 280px; }
-  .footer-links h4 { font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 0.8rem; }
-  .footer-links ul { list-style: none; }
-  .footer-links ul li { margin-bottom: 0.5rem; }
-  .footer-links ul li a { color: var(--text-dim); font-size: 0.875rem; }
-  .footer-links ul li a:hover { color: var(--text); }
-  .footer-bottom { border-top: 1px solid var(--border); margin-top: 2rem; padding-top: 1.5rem; max-width: 1100px; margin-left: auto; margin-right: auto; text-align: center; }
-  .footer-bottom p { color: var(--text-dim); font-size: 0.75rem; }
+/* ORDER SECTION */
+.order-section {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+.pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+.pricing-card {
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  border-radius: 12px;
+  padding: 2rem;
+  position: relative;
+}
+.pricing-card.featured {
+  border-color: var(--gold);
+  border-width: 2px;
+}
+.best-value-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold);
+  color: #000;
+  padding: 3px 16px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  white-space: nowrap;
+  letter-spacing: 0.05em;
+}
+.pricing-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+.pricing-sub {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+.pricing-rrp {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  text-decoration: line-through;
+  margin-bottom: 0.2rem;
+}
+.pricing-amount {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 0.2rem;
+}
+.pricing-card.featured .pricing-amount { color: var(--gold); }
+.pricing-shipping {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+.pricing-ship-free { color: var(--green); font-weight: 600; }
+.pricing-ship-saving { color: var(--gold); font-weight: 600; }
 
-  /* RESPONSIVE */
-  @media (max-width: 768px) {
-    .hero { grid-template-columns: 1fr; padding: 3rem 1.5rem 2rem; gap: 2rem; }
-    .hero h1 { font-size: 2rem; }
-    .features { grid-template-columns: 1fr; }
-    .blog-grid { grid-template-columns: 1fr; }
-    .stats { grid-template-columns: 1fr; }
-    .mechanism-inner { grid-template-columns: 1fr; padding: 3rem 1.5rem; }
-    .email-form { flex-direction: column; }
-    .email-section { padding: 2.5rem 1.5rem; }
-    .nav-links { display: none; }
-    .footer-inner { flex-direction: column; }
-  }
+/* FORM */
+.order-form-section {
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  border-radius: 12px;
+  padding: 2.5rem;
+}
+.order-form-section h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+.form-sub {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; }
+.form-group label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.form-group input,
+.form-group select {
+  background: var(--bg);
+  border: 1px solid var(--border2);
+  color: var(--text);
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+  font-family: inherit;
+}
+.form-group input:focus,
+.form-group select:focus { border-color: var(--gold); }
+.form-group select option { background: var(--bg2); }
+.btn-submit {
+  background: var(--gold);
+  color: #000;
+  padding: 0.95rem 2.5rem;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.2s;
+  letter-spacing: 0.02em;
+  margin-top: 0.5rem;
+}
+.btn-submit:hover { background: var(--gold-light); }
+.btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+.payment-note {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* PAYMENT RESULT */
+.payment-result {
+  display: none;
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  border-radius: 12px;
+  padding: 2.5rem;
+  text-align: center;
+}
+.payment-icon { font-size: 3rem; margin-bottom: 1rem; }
+.payment-result h3 { font-size: 1.4rem; font-weight: 700; color: var(--gold); margin-bottom: 0.5rem; }
+.payment-result p { color: var(--text-dim); font-size: 0.9rem; margin-bottom: 1.5rem; }
+.payment-box {
+  background: var(--bg);
+  border: 1px solid rgba(201,168,76,0.3);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+.pay-row-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 0.3rem;
+}
+.pay-amount {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+.pay-address {
+  font-family: monospace;
+  font-size: 0.85rem;
+  color: var(--text);
+  word-break: break-all;
+  background: var(--bg2);
+  padding: 0.75rem;
+  border-radius: 4px;
+}
+.pay-meta { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.75rem; }
+.fallback-result {
+  display: none;
+  text-align: center;
+  padding: 2rem;
+}
+.fallback-result h3 { color: var(--green); margin-bottom: 0.5rem; }
+.fallback-result p { color: var(--text-dim); font-size: 0.9rem; }
+
+/* FAQ */
+.faq-list { display: flex; flex-direction: column; gap: 1rem; max-width: 800px; }
+.faq-item {
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.faq-q {
+  padding: 1.2rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color 0.2s;
+}
+.faq-q:hover { color: var(--gold); }
+.faq-icon { font-size: 1.2rem; color: var(--gold); transition: transform 0.2s; }
+.faq-a {
+  padding: 0 1.5rem 1.2rem;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  display: none;
+}
+.faq-item.open .faq-a { display: block; }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+
+/* FOOTER */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 3rem 2rem;
+  background: var(--bg);
+}
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.footer-brand h3 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+.footer-brand p {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  max-width: 260px;
+}
+.footer-links h4 {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+.footer-links ul { list-style: none; }
+.footer-links ul li { margin-bottom: 0.4rem; }
+.footer-links ul li a { color: var(--text-muted); font-size: 0.875rem; }
+.footer-links ul li a:hover { color: var(--text); }
+.footer-bottom {
+  border-top: 1px solid var(--border);
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.footer-bottom p { color: var(--text-muted); font-size: 0.75rem; line-height: 1.6; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero { grid-template-columns: 1fr; padding: 3rem 1.5rem 2rem; gap: 2rem; }
+  .hero h1 { font-size: 2rem; }
+  .hero-visual { display: none; }
+  .stats-inner { grid-template-columns: 1fr; gap: 1rem; text-align: center; }
+  .steps { grid-template-columns: 1fr; }
+  .trial-stats { grid-template-columns: repeat(2, 1fr); }
+  .coa-grid { grid-template-columns: repeat(2, 1fr); }
+  .pricing-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .compare-table { font-size: 0.8rem; }
+  .compare-table th, .compare-table td { padding: 0.7rem 0.6rem; }
+  .nav-links { display: none; }
+  .footer-inner { flex-direction: column; }
+  .section { padding: 3rem 1.5rem; }
+}
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
-  <div class="nav-logo">FOLLICLE<span>LABS</span></div>
+  <div class="nav-logo">Hairstemlab</div>
   <div class="nav-links">
-    <a href="/blog/">Research</a>
-    <a href="/product.html">Products</a>
-    <a href="/about.html">About</a>
-    <a href="/product.html" class="nav-cta">Buy JXL-069</a>
+    <a href="#science">Science</a>
+    <a href="#results">Results</a>
+    <a href="#order">Order</a>
+    <a href="#faq">FAQ</a>
+    <a href="#order" class="nav-cta">Pre-Order</a>
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <div class="hero-content">
     <div class="hero-badge">Research-Grade MPC Inhibitor</div>
-    <h1>The Science Behind <span>Follicle Reactivation</span></h1>
-    <p>JXL-069 targets the same mitochondrial pyruvate carrier mechanism as PP405 — the compound behind the most promising hair follicle stem cell research in decades. Available now for laboratory research.</p>
+    <h1>Reactivate Your<br><span>Hair Follicles.</span></h1>
+    <p class="hero-sub">JXL-069 targets the same mitochondrial pyruvate carrier mechanism as PP405 — the compound behind the most promising hair follicle stem cell research in decades. Available now from Australia.</p>
+    <div class="hero-price">
+      <span class="hero-rrp">RRP $189</span>
+      <span class="hero-amount">$159 AUD</span>
+      <span class="hero-shipping">+ $12.95 shipping</span>
+    </div>
     <div class="hero-actions">
-      <a href="/product.html" class="btn-primary">Pre-Order — $159 AUD</a>
-      <a href="/blog/" class="btn-ghost">Read the Research →</a>
+      <a href="#order" class="btn-primary">Pre-Order Now — Ships from Australia</a>
     </div>
+    <p class="hero-note"><span>⚡</span> Limited first batch available</p>
   </div>
-  <div class="hero-product">
-    <div class="product-card">
-      <div class="product-img">🧬</div>
-      <div class="product-badge">In Stock — Ships in 2–3 Days</div>
-      <h2>JXL-069 Research Serum</h2>
-      <div class="product-sub">30mL topical spray · 0.05% concentration · Research use only</div>
-      <div class="product-price"><span style="text-decoration:line-through;color:#555;font-size:1rem;font-weight:400">$189</span> $159 AUD <span style="font-size:0.8rem;color:#c9a84c">+ $12.95 shipping</span></div>
-      <div class="product-note">⚡ Backorders accepted — limited batch quantity</div>
-      <a href="/product.html" class="btn-primary">Add to Cart</a>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="section-inner">
-    <div class="section-label">The Mechanism</div>
-    <h2>Why MPC Inhibition Changes Everything</h2>
-    <p>Minoxidil extends the growth phase. Finasteride slows DHT. Neither can reactivate a dormant follicle. MPC inhibition targets the metabolic switch inside the stem cell itself.</p>
-    <div class="features">
-      <div class="feature">
-        <div class="feature-icon">🔬</div>
-        <h3>Stem Cell Activation</h3>
-        <p>JXL-069 inhibits the mitochondrial pyruvate carrier (MPC), shifting hair follicle stem cells from quiescence toward activation — the same mechanism validated in the PP405 Phase 2a trial.</p>
+  <div class="hero-visual">
+    <div class="hero-vial">🧪</div>
+    <h3>JXL-069 Research Serum</h3>
+    <div class="product-sub">30mL topical spray · 0.05% concentration · Research use only</div>
+    <div class="hero-specs">
+      <div class="hero-spec">
+        <span class="hero-spec-label">CAS Number</span>
+        <span class="hero-spec-value">2260696-63-5</span>
       </div>
-      <div class="feature">
-        <div class="feature-icon">⚗️</div>
-        <h3>Third-Party Verified Purity</h3>
-        <p>Every batch comes with a Certificate of Analysis from an independent Australian lab. HPLC purity ≥98%. No fillers. No undisclosed compounds. Research-grade means research-grade.</p>
+      <div class="hero-spec">
+        <span class="hero-spec-label">Purity (HPLC)</span>
+        <span class="hero-spec-value" style="color:var(--gold)">99.77%</span>
       </div>
-      <div class="feature">
-        <div class="feature-icon">🇦🇺</div>
-        <h3>Australia-First Supply</h3>
-        <p>Formulated and dispatched from Australian facilities. Ships within 2–3 business days. No international customs delays, no uncertainty about what arrives.</p>
+      <div class="hero-spec">
+        <span class="hero-spec-label">Origin</span>
+        <span class="hero-spec-value">Australia</span>
       </div>
-    </div>
-    <div class="stats">
-      <div class="stat">
-        <div class="stat-num">31%</div>
-        <div class="stat-label">of PP405 trial participants showed &gt;20% hair density increase at week 8</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">0.05%</div>
-        <div class="stat-label">JXL-069 concentration — matched to MPC inhibition research protocols</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">NCT06393452</div>
-        <div class="stat-label">Registered clinical trial — Phase 2a PP405 data on ClinicalTrials.gov</div>
+      <div class="hero-spec">
+        <span class="hero-spec-label">Mechanism</span>
+        <span class="hero-spec-value">MPC Inhibitor</span>
       </div>
     </div>
   </div>
 </section>
 
-<div class="mechanism">
-  <div class="mechanism-inner">
-    <div>
-      <div class="section-label">How It Works</div>
-      <h2>The MPC Inhibition Pathway</h2>
-      <p style="color:#888;margin-bottom:2rem;">Understanding the mechanism is the first step to understanding why this class of compounds generates serious scientific interest.</p>
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat">
+      <div class="stat-num">31%</div>
+      <div class="stat-label">Hair density gain in Phase 2a trial responders</div>
     </div>
-    <ul class="mechanism-steps">
-      <li>
-        <div class="step-num">1</div>
-        <div class="step-content">
-          <h4>Follicle Stem Cells Enter Quiescence</h4>
-          <p>High MPC activity keeps hair follicle stem cells (HFSCs) in a dormant state. Dormant follicles do not produce hair. This is the problem minoxidil cannot solve.</p>
-        </div>
-      </li>
-      <li>
-        <div class="step-num">2</div>
-        <div class="step-content">
-          <h4>JXL-069 Inhibits the MPC</h4>
-          <p>Applied topically, JXL-069 inhibits the mitochondrial pyruvate carrier — the metabolic gatekeeper that keeps HFSCs quiescent. This shifts cellular energy metabolism toward glycolysis.</p>
-        </div>
-      </li>
-      <li>
-        <div class="step-num">3</div>
-        <div class="step-content">
-          <h4>Stem Cells Activate</h4>
-          <p>The metabolic shift triggers HFSC activation. Activated stem cells re-enter the hair growth cycle. Dormant follicles begin producing hair again.</p>
-        </div>
-      </li>
-      <li>
-        <div class="step-num">4</div>
-        <div class="step-content">
-          <h4>Observable Results</h4>
-          <p>In PP405 trials, measurable hair density increases were observed at week 8 with only 4 weeks of active treatment. Results persisted beyond the active treatment window.</p>
-        </div>
-      </li>
-    </ul>
+    <div class="stat">
+      <div class="stat-num">8 weeks</div>
+      <div class="stat-label">Time to measurable results in trial data</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">0%</div>
+      <div class="stat-label">Systemic absorption — topical application only</div>
+    </div>
   </div>
 </div>
 
-<section class="section">
+<!-- HOW IT WORKS -->
+<section class="section section-border-top" id="science">
   <div class="section-inner">
-    <div class="section-label">Research Library</div>
-    <h2>The Science, Explained</h2>
-    <p>No hype. No before-and-after photos. Just the research — what it shows, what it doesn't, and what it means for MPC inhibition as a research tool.</p>
-    <div class="blog-grid">
-      <div class="blog-card">
-        <a href="/blog/what-is-pp405.html">
-          <div class="blog-card-img">🧬</div>
-          <div class="blog-card-body">
-            <div class="blog-card-tag">Science</div>
-            <h3>What is PP405? The Hair Loss Treatment Getting Serious Scientific Attention</h3>
-            <p>The Phase 2a data, UCLA origins, and why MPC inhibition is different from anything in the current treatment landscape.</p>
-          </div>
-        </a>
+    <div class="section-label">Mechanism</div>
+    <h2>How It Works</h2>
+    <p class="section-desc">Minoxidil extends the growth phase. Finasteride slows DHT. Neither can reactivate a dormant follicle. MPC inhibition targets the metabolic switch inside the stem cell itself.</p>
+    <div class="steps">
+      <div class="step-card">
+        <div class="step-num-badge">1</div>
+        <h3>MPC Inhibition</h3>
+        <p>JXL-069 inhibits the mitochondrial pyruvate carrier (MPC) — the metabolic gatekeeper that keeps hair follicle stem cells (HFSCs) in a dormant, quiescent state.</p>
       </div>
-      <div class="blog-card">
-        <a href="/blog/jxl069-vs-minoxidil.html">
-          <div class="blog-card-img">⚖️</div>
-          <div class="blog-card-body">
-            <div class="blog-card-tag">Comparison</div>
-            <h3>JXL-069 vs Minoxidil: Which Is Better for Hair Regrowth?</h3>
-            <p>A mechanistic comparison. Different targets, different limitations, different potential use cases.</p>
-          </div>
-        </a>
+      <div class="step-card">
+        <div class="step-num-badge">2</div>
+        <h3>Metabolic Switch</h3>
+        <p>Inhibiting the MPC shifts cellular energy metabolism away from oxidative phosphorylation toward glycolysis — the same metabolic state seen in actively cycling follicles.</p>
       </div>
-      <div class="blog-card">
-        <a href="/blog/where-to-buy-jxl069-australia.html">
-          <div class="blog-card-img">🇦🇺</div>
-          <div class="blog-card-body">
-            <div class="blog-card-tag">Sourcing</div>
-            <h3>Where to Buy JXL-069 in Australia (2026 Guide)</h3>
-            <p>What to check before ordering: purity, CoA, concentration, and red flags to avoid.</p>
-          </div>
-        </a>
-      </div>
-      <div class="blog-card">
-        <a href="/blog/jxl069-dosing-protocol.html">
-          <div class="blog-card-img">⚗️</div>
-          <div class="blog-card-body">
-            <div class="blog-card-tag">Protocol</div>
-            <h3>How to Use JXL-069 — Dosing Protocol for Hair Loss Research</h3>
-            <p>Application steps, timing, stacking combinations, and the research timeline for observable changes.</p>
-          </div>
-        </a>
-      </div>
-      <div class="blog-card">
-        <a href="/blog/pp405-trial-results.html">
-          <div class="blog-card-img">📊</div>
-          <div class="blog-card-body">
-            <div class="blog-card-tag">Clinical Data</div>
-            <h3>PP405 Phase 2a Trial Results — What the Science Actually Shows</h3>
-            <p>78 participants, 4 weeks treatment, 31% showing &gt;20% hair density increase. A proper breakdown of the data.</p>
-          </div>
-        </a>
-      </div>
-      <div class="blog-card" style="background:linear-gradient(135deg,rgba(0,137,123,0.05),rgba(0,137,123,0.12));border-color:rgba(0,137,123,0.2);">
-        <a href="/blog/">
-          <div class="blog-card-img" style="background:transparent;">→</div>
-          <div class="blog-card-body">
-            <div class="blog-card-tag">Research Library</div>
-            <h3>View All Research Posts</h3>
-            <p>Full archive of mechanistic breakdowns, sourcing guides, and clinical data analysis.</p>
-          </div>
-        </a>
+      <div class="step-card">
+        <div class="step-num-badge">3</div>
+        <h3>Terminal Hair Growth</h3>
+        <p>The metabolic shift triggers HFSC activation. Activated stem cells re-enter the hair growth cycle. Dormant follicles begin producing terminal hair again.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section">
+<!-- RESEARCH DATA -->
+<section class="section research-bg section-border-top" id="results">
   <div class="section-inner">
-    <div class="email-section">
-      <h2>Stay Ahead of the Research</h2>
-      <p>We publish mechanistic breakdowns and sourcing updates before anyone else. No noise, no marketing fluff — just the science as it develops.</p>
-      <form class="email-form" onsubmit="handleSignup(event)">
-        <input type="email" placeholder="your@email.com" required id="email-input">
-        <button type="submit">Get Research Updates</button>
+    <div class="section-label">Clinical Evidence</div>
+    <h2>Phase 2a Trial Data</h2>
+    <p class="section-desc">Published data from the PP405 Phase 2a trial on ClinicalTrials.gov. JXL-069 targets the same validated MPC inhibition mechanism.</p>
+    <div class="trial-info">
+      <div class="trial-badge">NCT06393452</div>
+      <p style="color:var(--text-dim);font-size:0.9rem">PP405 Phase 2a — Registered trial on ClinicalTrials.gov. 78 adults, randomised, double-blind, placebo-controlled. Primary endpoint: change in hair density at week 8.</p>
+    </div>
+    <div class="trial-stats">
+      <div class="trial-stat">
+        <div class="trial-stat-num">78</div>
+        <div class="trial-stat-label">Adult participants enrolled</div>
+      </div>
+      <div class="trial-stat">
+        <div class="trial-stat-num">31%</div>
+        <div class="trial-stat-label">Responders with &gt;20% density increase</div>
+      </div>
+      <div class="trial-stat">
+        <div class="trial-stat-num">4 wks</div>
+        <div class="trial-stat-label">Active treatment duration</div>
+      </div>
+      <div class="trial-stat">
+        <div class="trial-stat-num">8 wks</div>
+        <div class="trial-stat-label">Measurement point for outcomes</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="section section-border-top">
+  <div class="section-inner">
+    <div class="section-label">Comparison</div>
+    <h2>JXL-069 vs Alternatives</h2>
+    <p class="section-desc">A mechanistic comparison. Different targets, different limitations, different potential.</p>
+    <div class="compare-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th class="gold-col">JXL-069 (MPC Inhibitor)</th>
+            <th>Minoxidil</th>
+            <th>Finasteride</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Mechanism</td>
+            <td class="good">MPC inhibition — stem cell activation</td>
+            <td class="ok">Extends anagen (growth phase)</td>
+            <td class="ok">Reduces DHT conversion</td>
+          </tr>
+          <tr>
+            <td>Reactivates dormant follicles</td>
+            <td class="good">Yes — primary mechanism</td>
+            <td class="bad">No</td>
+            <td class="bad">No</td>
+          </tr>
+          <tr>
+            <td>Systemic absorption</td>
+            <td class="good">Minimal — topical only</td>
+            <td class="ok">Minimal topical</td>
+            <td class="bad">Oral — systemic</td>
+          </tr>
+          <tr>
+            <td>Hormonal side effects</td>
+            <td class="good">None reported</td>
+            <td class="ok">Rare (topical)</td>
+            <td class="bad">Sexual dysfunction, depression risk</td>
+          </tr>
+          <tr>
+            <td>Time to measurable results</td>
+            <td class="good">8 weeks (trial data)</td>
+            <td class="ok">3–6 months typically</td>
+            <td class="ok">3–12 months typically</td>
+          </tr>
+          <tr>
+            <td>Application</td>
+            <td>Topical spray</td>
+            <td>Topical liquid/foam</td>
+            <td>Oral tablet</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATE OF ANALYSIS -->
+<section class="section section-border-top">
+  <div class="section-inner">
+    <div class="section-label">Third-Party Verified</div>
+    <h2>Certificate of Analysis</h2>
+    <p class="section-desc">Every batch independently tested by accredited laboratory. Results available on request.</p>
+    <div class="coa-grid">
+      <div class="coa-card">
+        <div class="coa-val">99.77%</div>
+        <div class="coa-label">Purity by HPLC</div>
+      </div>
+      <div class="coa-card">
+        <div class="coa-val">2260696-63-5</div>
+        <div class="coa-label">CAS Number</div>
+      </div>
+      <div class="coa-card">
+        <div class="coa-val">✓</div>
+        <div class="coa-label">NMR Confirmed</div>
+      </div>
+      <div class="coa-card">
+        <div class="coa-val">C20H21F6N3O2</div>
+        <div class="coa-label">Molecular Formula</div>
+      </div>
+    </div>
+    <div class="coa-table-wrap">
+      <table class="coa-table">
+        <thead>
+          <tr>
+            <th>Test</th>
+            <th>Method</th>
+            <th>Specification</th>
+            <th>Result</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Appearance</td>
+            <td>Visual</td>
+            <td>White to off-white solid powder</td>
+            <td class="pass">Conforms</td>
+          </tr>
+          <tr>
+            <td>Purity (HPLC)</td>
+            <td>HPLC</td>
+            <td>≥98.0%</td>
+            <td class="pass">99.77%</td>
+          </tr>
+          <tr>
+            <td>Identity (NMR)</td>
+            <td>1H-NMR</td>
+            <td>Consistent with structure</td>
+            <td class="pass">Conforms</td>
+          </tr>
+          <tr>
+            <td>Molecular Formula</td>
+            <td>MS</td>
+            <td>C20H21F6N3O2</td>
+            <td class="pass">Confirmed</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="coa-note">Certificate of Analysis available on request. Batch tested by independent analytical laboratory.</p>
+  </div>
+</section>
+
+<!-- PRICING & ORDER -->
+<section class="section order-section" id="order">
+  <div class="section-inner">
+    <div class="section-label">Pre-Order</div>
+    <h2>Choose Your Supply</h2>
+    <p class="section-desc">Limited first batch. Ships from Australia. Crypto payment via USDT (TRC20).</p>
+
+    <div class="pricing-grid">
+      <!-- 1 Bottle -->
+      <div class="pricing-card">
+        <div class="pricing-title">1 Bottle</div>
+        <div class="pricing-sub">30mL · 1 month supply</div>
+        <div class="pricing-rrp">RRP $189</div>
+        <div class="pricing-amount">$159</div>
+        <div class="pricing-shipping">+ $12.95 shipping</div>
+        <a href="#order-form" class="btn-primary" style="display:block;text-align:center" onclick="selectQty('1')">Pre-Order Now</a>
+      </div>
+      <!-- 3 Bottles -->
+      <div class="pricing-card featured">
+        <div class="best-value-badge">20% Off — Best Value</div>
+        <div class="pricing-title">3 Bottle Bundle</div>
+        <div class="pricing-sub">90mL · 3 month supply</div>
+        <div class="pricing-rrp">RRP $477</div>
+        <div class="pricing-amount">$379</div>
+        <div class="pricing-shipping"><span class="pricing-ship-free">FREE shipping</span> &nbsp;<span class="pricing-ship-saving">— Save $98</span></div>
+        <a href="#order-form" class="btn-primary" style="display:block;text-align:center;margin-top:1rem" onclick="selectQty('3')">Pre-Order Now</a>
+      </div>
+    </div>
+
+    <!-- ORDER FORM -->
+    <div class="order-form-section" id="order-form">
+      <h3>Complete Your Pre-Order</h3>
+      <p class="form-sub">Enter your details below. Payment is made via USDT (TRC20) crypto.</p>
+      <form id="preorder-form" onsubmit="handlePreOrder(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="f-name">Full Name</label>
+            <input type="text" id="f-name" name="name" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label for="f-email">Email Address</label>
+            <input type="email" id="f-email" name="email" placeholder="your@email.com" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="f-qty">Quantity</label>
+          <select id="f-qty" name="quantity">
+            <option value="1">1 Bottle — $159 AUD (+ $12.95 shipping)</option>
+            <option value="3">3 Bottles — $379 AUD (FREE shipping — 20% off)</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-submit" id="submit-btn">Proceed to Payment →</button>
+        <p class="payment-note">🔒 Secure crypto payment via USDT TRC20. Your order details are encrypted.</p>
       </form>
-      <p class="email-small">No spam. Unsubscribe any time. Research updates only.</p>
+    </div>
+
+    <!-- PAYMENT RESULT -->
+    <div class="payment-result" id="payment-result">
+      <div class="payment-icon">✅</div>
+      <h3>Order Confirmed!</h3>
+      <p>Send the exact amount below to complete your order.</p>
+      <div class="payment-box">
+        <div class="pay-row-label">Send Exactly</div>
+        <div class="pay-amount" id="pay-amount">— USDT</div>
+        <div class="pay-row-label">To This Address</div>
+        <div class="pay-address" id="pay-address">—</div>
+        <div class="pay-meta">
+          <span id="pay-currency-label"></span> · 
+          Order ID: <span id="pay-order-id"></span>
+        </div>
+      </div>
+      <p style="font-size:0.82rem;color:var(--text-muted)">Confirmation email sent to <span id="pay-email"></span></p>
+    </div>
+
+    <!-- FALLBACK RESULT -->
+    <div class="fallback-result" id="fallback-result">
+      <h3>✓ You're on the list!</h3>
+      <p>We'll contact you at <strong id="fallback-email"></strong> with payment details shortly.</p>
     </div>
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="section section-border-top" id="faq">
+  <div class="section-inner">
+    <div class="section-label">FAQ</div>
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          What is JXL-069 and how does it relate to PP405?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">
+          JXL-069 is a research-grade mitochondrial pyruvate carrier (MPC) inhibitor — the same class of compound as PP405, which showed significant hair density gains in a Phase 2a clinical trial (NCT06393452). JXL-069 targets the same validated mechanism and is supplied for laboratory research purposes only.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Is JXL-069 safe for use?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">
+          JXL-069 is supplied strictly for laboratory research use only. It is not approved by the TGA and is not intended for human consumption. All purchase, handling, and application is the sole responsibility of the researcher. Consult applicable regulations before ordering.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          When will my order ship?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">
+          This is a pre-order for the first production batch. Orders will be dispatched within 2–5 business days of payment confirmation. You will receive tracking information via email.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          What payment methods are accepted?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">
+          We currently accept USDT (TRC20) cryptocurrency only. After submitting your order, you will receive a payment address and exact amount to send. Orders are confirmed once payment is received on-chain.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Do you ship Australia-wide?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">
+          Yes. We ship to all states and territories within Australia. Standard shipping is $12.95. Orders of 3 bottles receive FREE shipping. Dispatch is from Gold Coast, QLD. International shipping is not currently available.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <h3>FOLLICLE LABS</h3>
+      <h3>Hairstemlab</h3>
       <p>Research-grade MPC inhibitors for hair follicle stem cell science. Australian supply chain. Third-party verified.</p>
     </div>
     <div class="footer-links">
-      <h4>Products</h4>
+      <h4>Product</h4>
       <ul>
-        <li><a href="/product.html">JXL-069 Research Serum</a></li>
-        <li><a href="/product.html">Order</a></li>
+        <li><a href="#order">JXL-069 Research Serum</a></li>
+        <li><a href="#order">Pre-Order</a></li>
       </ul>
     </div>
     <div class="footer-links">
-      <h4>Research</h4>
+      <h4>Science</h4>
       <ul>
-        <li><a href="/blog/what-is-pp405.html">What is PP405?</a></li>
-        <li><a href="/blog/jxl069-vs-minoxidil.html">JXL-069 vs Minoxidil</a></li>
-        <li><a href="/blog/pp405-trial-results.html">Phase 2a Trial Results</a></li>
-        <li><a href="/blog/">All Posts</a></li>
-      </ul>
-    </div>
-    <div class="footer-links">
-      <h4>Company</h4>
-      <ul>
-        <li><a href="/about.html">About Hairstemlab</a></li>
+        <li><a href="#science">How It Works</a></li>
+        <li><a href="#results">Trial Data</a></li>
+        <li><a href="#faq">FAQ</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2026 Hairstemlab. JXL-069 is sold for laboratory research purposes only. Not for human consumption. Not TGA approved. This website does not constitute medical advice.</p>
+    <p>© 2026 Hairstemlab. For laboratory research use only. Not for human consumption. Not TGA approved. This website does not constitute medical advice. JXL-069 is a research chemical supplied for scientific study only.</p>
   </div>
 </footer>
 
 <script>
-function handleSignup(e) {
-  e.preventDefault();
-  const btn = e.target.querySelector('button');
-  btn.textContent = '✓ Subscribed!';
-  btn.style.background = '#00bfa5';
-  e.target.querySelector('input').value = '';
-  setTimeout(() => { btn.textContent = 'Get Research Updates'; btn.style.background = ''; }, 3000);
-}
-</script>
-
-<script>
+// NowPayments integration
 const NP_API_KEY = 'MYM3PMW-X39M4MD-PRJ9TG1-J913CKJ';
 
-async function createNowPayment(amount_aud, currency, order_id, customer_email) {
-  try {
-    const response = await fetch('https://api.nowpayments.io/v1/payment', {
-      method: 'POST',
-      headers: {
-        'x-api-key': NP_API_KEY,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        price_amount: amount_aud,
-        price_currency: 'aud',
-        pay_currency: currency || 'usdttrc20',
-        order_id: order_id,
-        order_description: 'JXL-069 Research Serum - Hairstemlab',
-        ipn_callback_url: 'https://hairstemlab.com.au/ipn',
-        customer_email: customer_email,
-        is_fixed_rate: false
-      })
-    });
-    const data = await response.json();
-    return data;
-  } catch(e) {
-    console.error('Payment error:', e);
-    return null;
-  }
+const AMOUNTS = { '1': 159, '3': 379 };
+
+function selectQty(qty) {
+  const sel = document.getElementById('f-qty');
+  if (sel) sel.value = qty;
+}
+
+function toggleFaq(el) {
+  const item = el.closest('.faq-item');
+  item.classList.toggle('open');
+}
+
+async function createNowPayment(amount, orderId, customerEmail) {
+  const response = await fetch('https://api.nowpayments.io/v1/payment', {
+    method: 'POST',
+    headers: {
+      'x-api-key': NP_API_KEY,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      price_amount: amount,
+      price_currency: 'aud',
+      pay_currency: 'usdttrc20',
+      order_id: orderId,
+      order_description: 'JXL-069 Research Serum - Hairstemlab',
+      ipn_callback_url: 'https://hairstemlab.com.au/ipn',
+      customer_email: customerEmail,
+      is_fixed_rate: false
+    })
+  });
+  if (!response.ok) throw new Error('Payment API error: ' + response.status);
+  return await response.json();
 }
 
 async function handlePreOrder(e) {
   e.preventDefault();
   const form = e.target;
-  const name = form.querySelector('[name="name"]').value;
-  const email = form.querySelector('[name="email"]').value;
+  const name = form.querySelector('[name="name"]').value.trim();
+  const email = form.querySelector('[name="email"]').value.trim();
   const qty = form.querySelector('[name="quantity"]').value || '1';
-  
-  const amounts = {'1': 149, '3': 399, '6': 749};
-  const amount = amounts[qty] || 149;
-  const orderId = 'FL-' + Date.now();
-  
-  // Store in localStorage first
-  const orders = JSON.parse(localStorage.getItem('fl_orders') || '[]');
-  orders.push({name, email, qty, amount, orderId, date: new Date().toISOString()});
-  localStorage.setItem('fl_orders', JSON.stringify(orders));
-  
-  // Show loading
-  const btn = form.querySelector('button[type="submit"]');
-  btn.textContent = 'Creating payment...';
+  const amount = AMOUNTS[qty] || 159;
+  const orderId = 'HL-' + Date.now();
+
+  const btn = document.getElementById('submit-btn');
+  btn.textContent = 'Creating payment…';
   btn.disabled = true;
-  
-  // Create NowPayments payment
-  const payment = await createNowPayment(amount, 'usdttrc20', orderId, email);
-  
-  if (payment && payment.pay_address) {
-    // Show payment details
-    const container = form.closest('.order-section') || form.parentElement;
-    container.innerHTML = `
-      <div style="text-align:center;padding:40px 20px">
-        <div style="font-size:48px;margin-bottom:16px">✓</div>
-        <h3 style="color:#c9a84c;font-size:22px;margin-bottom:8px">Order Confirmed!</h3>
-        <p style="color:#94a3b8;margin-bottom:24px">Send payment to complete your order</p>
-        <div style="background:#111;border:1px solid #c9a84c40;border-radius:8px;padding:20px;margin-bottom:16px;text-align:left">
-          <p style="font-size:11px;color:#555;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">Send exactly:</p>
-          <p style="font-size:24px;font-weight:700;color:#c9a84c;margin-bottom:12px">${payment.pay_amount} ${payment.pay_currency?.toUpperCase()}</p>
-          <p style="font-size:11px;color:#555;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">To this address:</p>
-          <p style="font-size:12px;color:#e2e8f0;word-break:break-all;font-family:monospace;background:#0a0a0a;padding:10px;border-radius:4px">${payment.pay_address}</p>
-        </div>
-        <p style="font-size:12px;color:#555">Order ID: ${orderId}</p>
-        <p style="font-size:12px;color:#555;margin-top:8px">Confirmation email sent to ${email}</p>
-      </div>
-    `;
-  } else {
-    // Fallback - show success without payment link
-    btn.textContent = 'Pre-Order Placed!';
-    btn.style.background = '#22c55e';
-    const thanks = document.createElement('p');
-    thanks.style.cssText = 'color:#22c55e;margin-top:12px;text-align:center;font-weight:600';
-    thanks.textContent = "You're on the list! We'll contact you with payment details shortly.";
-    form.appendChild(thanks);
+
+  try {
+    const payment = await createNowPayment(amount, orderId, email);
+
+    if (payment && payment.pay_address) {
+      // Show form → payment result
+      document.getElementById('order-form').style.display = 'none';
+      const result = document.getElementById('payment-result');
+      result.style.display = 'block';
+
+      document.getElementById('pay-amount').textContent =
+        payment.pay_amount + ' ' + (payment.pay_currency || 'USDTTRC20').toUpperCase();
+      document.getElementById('pay-address').textContent = payment.pay_address;
+      document.getElementById('pay-currency-label').textContent =
+        (payment.pay_currency || 'usdttrc20').toUpperCase();
+      document.getElementById('pay-order-id').textContent = orderId;
+      document.getElementById('pay-email').textContent = email;
+    } else {
+      throw new Error('No pay_address in response');
+    }
+  } catch (err) {
+    console.error('Payment error:', err);
+    // Fallback: collect email, show message
+    document.getElementById('order-form').style.display = 'none';
+    const fb = document.getElementById('fallback-result');
+    fb.style.display = 'block';
+    document.getElementById('fallback-email').textContent = email;
   }
 }
-
-document.addEventListener('DOMContentLoaded', function() {
-  const form = document.querySelector('#preorder-form, form.preorder, .order-form');
-  if (form) {
-    form.addEventListener('submit', handlePreOrder);
-  }
-});
 </script>
 
-
-<!-- Lab Test Certificate Section -->
-<section style="background:#0d0d0d;padding:60px 24px;border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a">
-  <div style="max-width:900px;margin:0 auto">
-    <div style="text-align:center;margin-bottom:40px">
-      <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#c9a84c;margin-bottom:8px">Third-Party Verified</div>
-      <h2 style="font-size:28px;font-weight:800;color:#fff">Certificate of Analysis</h2>
-      <p style="color:#555;margin-top:8px">Every batch independently tested by accredited laboratory</p>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:32px">
-      <div style="background:#111;border:1px solid #1e1e1e;border-radius:8px;padding:20px;text-align:center">
-        <div style="font-size:28px;font-weight:800;color:#c9a84c">99.77%</div>
-        <div style="font-size:11px;color:#555;text-transform:uppercase;letter-spacing:.5px;margin-top:4px">Purity by HPLC</div>
-      </div>
-      <div style="background:#111;border:1px solid #1e1e1e;border-radius:8px;padding:20px;text-align:center">
-        <div style="font-size:28px;font-weight:800;color:#c9a84c">CAS</div>
-        <div style="font-size:11px;color:#555;text-transform:uppercase;letter-spacing:.5px;margin-top:4px">2260696-63-5</div>
-      </div>
-      <div style="background:#111;border:1px solid #1e1e1e;border-radius:8px;padding:20px;text-align:center">
-        <div style="font-size:28px;font-weight:800;color:#c9a84c">✓</div>
-        <div style="font-size:11px;color:#555;text-transform:uppercase;letter-spacing:.5px;margin-top:4px">HPLC Verified</div>
-      </div>
-      <div style="background:#111;border:1px solid #1e1e1e;border-radius:8px;padding:20px;text-align:center">
-        <div style="font-size:28px;font-weight:800;color:#c9a84c">C20H21F6N3O2</div>
-        <div style="font-size:11px;color:#555;text-transform:uppercase;letter-spacing:.5px;margin-top:4px">Molecular Formula</div>
-      </div>
-    </div>
-    <div style="background:#111;border:1px solid #1e1e1e;border-radius:8px;padding:24px">
-      <table style="width:100%;border-collapse:collapse;font-size:13px">
-        <thead>
-          <tr style="border-bottom:1px solid #1e1e1e">
-            <th style="padding:8px 12px;text-align:left;color:#555;font-size:10px;text-transform:uppercase;letter-spacing:.5px">Test</th>
-            <th style="padding:8px 12px;text-align:left;color:#555;font-size:10px;text-transform:uppercase;letter-spacing:.5px">Method</th>
-            <th style="padding:8px 12px;text-align:left;color:#555;font-size:10px;text-transform:uppercase;letter-spacing:.5px">Specification</th>
-            <th style="padding:8px 12px;text-align:left;color:#555;font-size:10px;text-transform:uppercase;letter-spacing:.5px">Result</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr style="border-bottom:1px solid #111"><td style="padding:10px 12px;color:#e2e8f0">Appearance</td><td style="padding:10px 12px;color:#555">Visual</td><td style="padding:10px 12px;color:#555">White to off-white solid powder</td><td style="padding:10px 12px;color:#22c55e">Conforms</td></tr>
-          <tr style="border-bottom:1px solid #111"><td style="padding:10px 12px;color:#e2e8f0">Purity (HPLC)</td><td style="padding:10px 12px;color:#555">HPLC</td><td style="padding:10px 12px;color:#555">&ge;98.0%</td><td style="padding:10px 12px;color:#22c55e">99.77%</td></tr>
-          <tr style="border-bottom:1px solid #111"><td style="padding:10px 12px;color:#e2e8f0">Identity (NMR)</td><td style="padding:10px 12px;color:#555">1H-NMR</td><td style="padding:10px 12px;color:#555">Consistent with structure</td><td style="padding:10px 12px;color:#22c55e">Conforms</td></tr>
-          <tr><td style="padding:10px 12px;color:#e2e8f0">Molecular Formula</td><td style="padding:10px 12px;color:#555">MS</td><td style="padding:10px 12px;color:#555">C20H21F6N3O2</td><td style="padding:10px 12px;color:#22c55e">Confirmed</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p style="text-align:center;color:#374151;font-size:11px;margin-top:16px">Certificate of Analysis available on request. Batch tested by independent analytical laboratory.</p>
-  </div>
-</section>
-
-<!-- Bundle Pricing Section -->
-<section style="background:#000;padding:60px 24px;border-bottom:1px solid #1a1a1a">
-  <div style="max-width:900px;margin:0 auto;text-align:center">
-    <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#c9a84c;margin-bottom:8px">Best Value</div>
-    <h2 style="font-size:28px;font-weight:800;color:#fff;margin-bottom:40px">Choose Your Bundle</h2>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px">
-      <!-- Single -->
-      <div style="background:#111;border:1px solid #1e1e1e;border-radius:12px;padding:28px">
-        <div style="font-size:13px;font-weight:700;color:#e2e8f0;margin-bottom:4px">Single Bottle</div>
-        <div style="font-size:11px;color:#555;margin-bottom:16px">30mL · 1 month supply</div>
-        <div style="font-size:13px;color:#555;text-decoration:line-through;margin-bottom:2px">RRP $189</div>
-        <div style="font-size:32px;font-weight:800;color:#fff;margin-bottom:4px">$159</div>
-        <div style="font-size:11px;color:#555;margin-bottom:20px">+ $12.95 shipping</div>
-        <a href="#order" style="display:block;background:#c9a84c;color:#000;padding:12px;border-radius:6px;font-weight:700;font-size:13px;text-decoration:none">Pre-Order</a>
-      </div>
-      <!-- 3-pack -->
-      <div style="background:#111;border:2px solid #c9a84c;border-radius:12px;padding:28px;position:relative">
-        <div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#c9a84c;color:#000;padding:4px 16px;border-radius:20px;font-size:11px;font-weight:700;white-space:nowrap">BEST VALUE</div>
-        <div style="font-size:13px;font-weight:700;color:#e2e8f0;margin-bottom:4px">3 Bottle Bundle</div>
-        <div style="font-size:11px;color:#555;margin-bottom:16px">90mL · 3 month supply</div>
-        <div style="font-size:13px;color:#555;text-decoration:line-through;margin-bottom:2px">RRP $477</div>
-        <div style="font-size:32px;font-weight:800;color:#c9a84c;margin-bottom:4px">$379</div>
-        <div style="font-size:11px;color:#22c55e;margin-bottom:20px">FREE shipping · Save $98 (20% off)</div>
-        <a href="#order" style="display:block;background:#c9a84c;color:#000;padding:12px;border-radius:6px;font-weight:700;font-size:13px;text-decoration:none">Pre-Order</a>
-      </div>
-      <!-- 6-pack -->
-      <div style="background:#111;border:1px solid #1e1e1e;border-radius:12px;padding:28px">
-        <div style="font-size:13px;font-weight:700;color:#e2e8f0;margin-bottom:4px">6 Bottle Bundle</div>
-        <div style="font-size:11px;color:#555;margin-bottom:16px">180mL · 6 month supply</div>
-        <div style="font-size:13px;color:#555;text-decoration:line-through;margin-bottom:2px">RRP $954</div>
-        <div style="font-size:32px;font-weight:800;color:#fff;margin-bottom:4px">$759</div>
-        <div style="font-size:11px;color:#22c55e;margin-bottom:20px">FREE shipping · Save $195 (20% off)</div>
-        <a href="#order" style="display:block;background:#c9a84c;color:#000;padding:12px;border-radius:6px;font-weight:700;font-size:13px;text-decoration:none">Pre-Order</a>
-      </div>
-    </div>
-  </div>
-</section>
 </body>
 </html>
