@@ -1209,5 +1209,175 @@ async function handlePreOrder(e) {
 }
 </script>
 
+
+<!-- How Ordering Works -->
+<section style="background:#050505;padding:72px 24px;border-top:1px solid #1a1a1a">
+  <div style="max-width:860px;margin:0 auto">
+    <div style="text-align:center;margin-bottom:48px">
+      <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#c9a84c;margin-bottom:8px">Simple Process</div>
+      <h2 style="font-size:clamp(24px,4vw,36px);font-weight:800;color:#fff">How Ordering Works</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px">
+      <div style="background:#0a0a0a;border:1px solid #1a1a1a;border-radius:10px;padding:28px">
+        <div style="font-size:36px;font-weight:900;color:#c9a84c;line-height:1;margin-bottom:12px">01</div>
+        <h3 style="font-size:15px;font-weight:700;color:#fff;margin-bottom:8px">Place Your Pre-Order</h3>
+        <p style="font-size:13px;color:#555;line-height:1.6">Fill in your details and choose your quantity. Payment is processed via cryptocurrency (USDT, BTC or ETH).</p>
+      </div>
+      <div style="background:#0a0a0a;border:1px solid #1a1a1a;border-radius:10px;padding:28px">
+        <div style="font-size:36px;font-weight:900;color:#c9a84c;line-height:1;margin-bottom:12px">02</div>
+        <h3 style="font-size:15px;font-weight:700;color:#fff;margin-bottom:8px">Payment Confirmation</h3>
+        <p style="font-size:13px;color:#555;line-height:1.6">Your crypto payment address appears immediately. Send payment within 24 hours to secure your order.</p>
+      </div>
+      <div style="background:#0a0a0a;border:1px solid #1a1a1a;border-radius:10px;padding:28px">
+        <div style="font-size:36px;font-weight:900;color:#c9a84c;line-height:1;margin-bottom:12px">03</div>
+        <h3 style="font-size:15px;font-weight:700;color:#fff;margin-bottom:8px">We Ship Your Order</h3>
+        <p style="font-size:13px;color:#555;line-height:1.6">Your order ships within 3 weeks from Australia. Tracking number sent to your email once dispatched.</p>
+      </div>
+      <div style="background:#0a0a0a;border:1px solid #1a1a1a;border-radius:10px;padding:28px">
+        <div style="font-size:36px;font-weight:900;color:#c9a84c;line-height:1;margin-bottom:12px">04</div>
+        <h3 style="font-size:15px;font-weight:700;color:#fff;margin-bottom:8px">Receive and Research</h3>
+        <p style="font-size:13px;color:#555;line-height:1.6">Your JXL-069 Research Serum arrives in discreet packaging. Refer to the included research protocol.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pre-Order Form -->
+<section id="order" style="background:#0a0a0a;padding:72px 24px;border-top:1px solid #1a1a1a">
+  <div style="max-width:600px;margin:0 auto">
+    <div style="text-align:center;margin-bottom:40px">
+      <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#c9a84c;margin-bottom:8px">Secure Your Order</div>
+      <h2 style="font-size:clamp(24px,4vw,36px);font-weight:800;color:#fff">Pre-Order JXL-069</h2>
+      <p style="color:#555;margin-top:8px;font-size:14px">Backorder. Ships within 3 weeks from Australia.</p>
+    </div>
+    <form id="preorder-form" onsubmit="handleOrder(event)" style="display:flex;flex-direction:column;gap:14px">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+        <input type="text" name="name" placeholder="Full name *" required style="background:#111;border:1px solid #222;color:#fff;padding:13px 16px;border-radius:6px;font-size:14px;outline:none;width:100%">
+        <input type="email" name="email" placeholder="Email address *" required style="background:#111;border:1px solid #222;color:#fff;padding:13px 16px;border-radius:6px;font-size:14px;outline:none;width:100%">
+      </div>
+      <input type="tel" name="phone" placeholder="Phone number (optional)" style="background:#111;border:1px solid #222;color:#fff;padding:13px 16px;border-radius:6px;font-size:14px;outline:none">
+      <input type="text" name="address" placeholder="Street address *" required style="background:#111;border:1px solid #222;color:#fff;padding:13px 16px;border-radius:6px;font-size:14px;outline:none">
+      <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:14px">
+        <input type="text" name="suburb" placeholder="Suburb *" required style="background:#111;border:1px solid #222;color:#fff;padding:13px 16px;border-radius:6px;font-size:14px;outline:none">
+        <select name="state" required style="background:#111;border:1px solid #222;color:#fff;padding:13px 16px;border-radius:6px;font-size:14px;outline:none">
+          <option value="">State *</option>
+          <option>NSW</option><option>VIC</option><option>QLD</option><option>WA</option>
+          <option>SA</option><option>TAS</option><option>ACT</option><option>NT</option>
+        </select>
+        <input type="text" name="postcode" placeholder="Postcode *" required maxlength="4" style="background:#111;border:1px solid #222;color:#fff;padding:13px 16px;border-radius:6px;font-size:14px;outline:none">
+      </div>
+      <input type="text" name="country" value="Australia" readonly style="background:#0d0d0d;border:1px solid #1a1a1a;color:#555;padding:13px 16px;border-radius:6px;font-size:14px">
+      <select name="quantity" id="qty-select" onchange="updateOrderSummary()" required style="background:#111;border:1px solid #222;color:#fff;padding:13px 16px;border-radius:6px;font-size:14px;outline:none">
+        <option value="1" data-amount="159">1 bottle — $159 AUD + $9.95 shipping</option>
+        <option value="3" data-amount="379">3 bottles — $379 AUD FREE shipping (20% off)</option>
+      </select>
+      <div id="order-summary" style="background:#111;border:1px solid #1e1e1e;border-radius:6px;padding:14px 16px;font-size:13px;color:#94a3b8"></div>
+      <button type="submit" id="order-btn" style="background:#c9a84c;color:#000;border:none;padding:16px;border-radius:6px;font-size:14px;font-weight:700;cursor:pointer;letter-spacing:.5px">Place Pre-Order</button>
+    </form>
+    <div id="payment-result" style="display:none;margin-top:24px"></div>
+    <p style="color:#374151;font-size:11px;text-align:center;margin-top:16px">Payment accepted in USDT, BTC and ETH via NowPayments. Your order details are stored securely.</p>
+  </div>
+</section>
+
+<script>
+const NP_API = 'MYM3PMW-X39M4MD-PRJ9TG1-J913CKJ';
+
+function updateOrderSummary() {
+  var sel = document.getElementById('qty-select');
+  var opt = sel.options[sel.selectedIndex];
+  var amount = opt.getAttribute('data-amount');
+  var qty = sel.value;
+  var summary = document.getElementById('order-summary');
+  if (qty === '1') {
+    summary.innerHTML = 'Order: 1 x JXL-069 Research Serum | $159 AUD + $9.95 shipping = <strong style="color:#c9a84c">$168.95 total</strong>';
+  } else {
+    summary.innerHTML = 'Order: 3 x JXL-069 Research Serum | <strong style="color:#22c55e">FREE shipping</strong> = <strong style="color:#c9a84c">$379 total (20% off)</strong>';
+  }
+}
+
+async function handleOrder(e) {
+  e.preventDefault();
+  var form = e.target;
+  var btn = document.getElementById('order-btn');
+  var sel = document.getElementById('qty-select');
+  var qty = sel.value;
+  var amount = qty === '3' ? 379 : 159;
+  var orderId = 'HS-' + Date.now();
+  
+  var orderData = {
+    orderId: orderId,
+    name: form.name.value,
+    email: form.email.value,
+    phone: form.phone.value,
+    address: form.address.value,
+    suburb: form.suburb.value,
+    state: form.state.value,
+    postcode: form.postcode.value,
+    country: 'Australia',
+    quantity: qty,
+    amount: amount,
+    date: new Date().toISOString()
+  };
+  
+  var orders = JSON.parse(localStorage.getItem('hs_orders') || '[]');
+  orders.push(orderData);
+  localStorage.setItem('hs_orders', JSON.stringify(orders));
+  
+  btn.textContent = 'Creating payment...';
+  btn.disabled = true;
+  
+  try {
+    var resp = await fetch('https://api.nowpayments.io/v1/payment', {
+      method: 'POST',
+      headers: {'x-api-key': NP_API, 'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        price_amount: amount,
+        price_currency: 'aud',
+        pay_currency: 'usdttrc20',
+        order_id: orderId,
+        order_description: 'JXL-069 Research Serum - Hairstemlab',
+        customer_email: form.email.value
+      })
+    });
+    var payment = await resp.json();
+    
+    var result = document.getElementById('payment-result');
+    result.style.display = 'block';
+    form.style.display = 'none';
+    
+    if (payment.pay_address) {
+      result.innerHTML = '<div style="background:#111;border:1px solid #c9a84c40;border-radius:10px;padding:28px">' +
+        '<div style="text-align:center;margin-bottom:20px"><div style="font-size:40px;margin-bottom:8px">✓</div>' +
+        '<h3 style="color:#c9a84c;font-size:20px;font-weight:700">Order Confirmed</h3>' +
+        '<p style="color:#555;font-size:13px;margin-top:4px">Order ID: ' + orderId + '</p></div>' +
+        '<div style="background:#0a0a0a;border:1px solid #1a1a1a;border-radius:8px;padding:16px;margin-bottom:16px">' +
+        '<p style="font-size:11px;color:#555;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">Send exactly:</p>' +
+        '<p style="font-size:22px;font-weight:800;color:#c9a84c;margin-bottom:12px">' + payment.pay_amount + ' ' + (payment.pay_currency || 'USDT').toUpperCase() + '</p>' +
+        '<p style="font-size:11px;color:#555;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">To this address:</p>' +
+        '<p style="font-size:12px;color:#e2e8f0;word-break:break-all;font-family:monospace;background:#050505;padding:10px;border-radius:4px">' + payment.pay_address + '</p></div>' +
+        '<div style="background:#0a0a0a;border:1px solid #1a1a1a;border-radius:8px;padding:16px">' +
+        '<p style="font-size:11px;color:#555;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">Shipping to:</p>' +
+        '<p style="font-size:13px;color:#94a3b8">' + orderData.name + '<br>' + orderData.address + ', ' + orderData.suburb + ' ' + orderData.state + ' ' + orderData.postcode + ', Australia</p></div>' +
+        '<p style="font-size:11px;color:#374151;text-align:center;margin-top:16px">Send payment within 24 hours. Confirmation sent to ' + orderData.email + '</p></div>';
+    } else {
+      result.innerHTML = '<div style="background:#111;border:1px solid #c9a84c40;border-radius:10px;padding:28px;text-align:center">' +
+        '<div style="font-size:40px;margin-bottom:8px">✓</div>' +
+        '<h3 style="color:#c9a84c;font-size:20px;font-weight:700">Pre-Order Received</h3>' +
+        '<p style="color:#94a3b8;margin-top:8px">We will contact you at ' + orderData.email + ' with payment details within 24 hours.</p>' +
+        '<p style="color:#555;font-size:11px;margin-top:8px">Order ID: ' + orderId + '</p></div>';
+    }
+  } catch(err) {
+    btn.textContent = 'Pre-Order Placed';
+    btn.style.background = '#22c55e';
+    btn.disabled = false;
+    var result = document.getElementById('payment-result');
+    result.style.display = 'block';
+    result.innerHTML = '<p style="color:#22c55e;text-align:center;padding:16px">Order received. We will contact you at ' + form.email.value + ' with payment details.</p>';
+  }
+}
+
+document.addEventListener('DOMContentLoaded', updateOrderSummary);
+</script>
+
 </body>
 </html>
