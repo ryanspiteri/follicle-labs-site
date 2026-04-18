@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ryan's Wardrobe Edit</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#111;color:#e2e8f0;padding:24px}
+h1{font-size:24px;font-weight:800;color:#fff;margin-bottom:4px}
+.sub{color:#555;font-size:14px;margin-bottom:32px}
+.outfits{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px}
+.outfit{background:#1a1a1a;border-radius:12px;overflow:hidden;border:1px solid #222}
+.outfit-header{background:#222;padding:14px 18px;display:flex;justify-content:space-between;align-items:center}
+.outfit-name{font-weight:700;font-size:15px;color:#fff}
+.outfit-occasion{font-size:11px;color:#888;text-transform:uppercase;letter-spacing:.5px}
+.items{padding:16px}
+.item{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid #222}
+.item:last-child{border-bottom:none}
+.item-color{width:40px;height:40px;border-radius:6px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:18px}
+.item-info{flex:1}
+.item-name{font-size:13px;font-weight:600;color:#e2e8f0}
+.item-brand{font-size:11px;color:#555;margin-top:2px}
+.item-price{font-size:12px;color:#c9a84c;margin-top:2px}
+.outfit-total{padding:12px 18px;background:#222;display:flex;justify-content:space-between;align-items:center}
+.total-label{font-size:12px;color:#555}
+.total-price{font-size:15px;font-weight:700;color:#c9a84c}
+.shop-links{display:flex;gap:8px;margin-top:10px}
+.shop-btn{flex:1;padding:10px;background:#1a1a1a;border:1px solid #333;border-radius:6px;color:#94a3b8;font-size:12px;font-weight:600;text-decoration:none;text-align:center;cursor:pointer}
+@media(max-width:640px){.outfits{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<h1>Ryan's Wardrobe Edit</h1>
+<div class="sub">Smart Casual | Zara + Uniqlo | ~$1,000 total | Size L-XL shirts, 34 pants, AU 9.5 shoes</div>
+
+<div class="outfits">
+
+  <!-- Outfit 1: Dinner Date -->
+  <div class="outfit">
+    <div class="outfit-header">
+      <div class="outfit-name">Dinner Date</div>
+      <div class="outfit-occasion">Evening</div>
+    </div>
+    <div class="items">
+      <div class="item">
+        <div class="item-color" style="background:#f8f4ed">🔘</div>
+        <div class="item-info">
+          <div class="item-name">Premium Linen Shirt — White</div>
+          <div class="item-brand">Uniqlo</div>
+          <div class="item-price">~$60</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-color" style="background:#2d3142">🔘</div>
+        <div class="item-info">
+          <div class="item-name">Smart Ankle Pants — Charcoal</div>
+          <div class="item-brand">Uniqlo</div>
+          <div class="item-price">~$65</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-color" style="background:#1a2844">🔘</div>
+        <div class="item-info">
+          <div class="item-name">Unstructured Blazer — Navy</div>
+          <div class="item-brand">Zara</div>
+          <div class="item-price">~$130</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-color" style="background:#1a1a1a">👟</div>
+        <div class="item-info">
+          <div class="item-name">Chelsea Boots — Black</div>
+          <div class="item-brand">Zara</div>
+          <div class="item-price">~$130</div>
+        </div>
+      </div>
+    </div>
+    <div class="outfit-total">
+      <span class="total-label">Outfit total</span>
+      <span class="total-price">~$385</span>
+    </div>
+    <div style="padding:12px 18px">
+      <a href="https://www.uniqlo.com/au/en/search?q=linen+shirt" class="shop-btn" target="_blank">Shop Uniqlo</a>
+      <a href="https://www.zara.com/au/en/man-blazers-l822.html" class="shop-btn" target="_blank" style="margin-left:8px">Shop Zara</a>
+    </div>
+  </div>
+
+  <!-- Outfit 2: Casual Smart -->
+  <div class="outfit">
+    <div class="outfit-header">
+      <div class="outfit-name">Casual Smart</div>
+      <div class="outfit-occasion">Lunch / Drinks</div>
+    </div>
+    <div class="items">
+      <div class="item">
+        <div class="item-color" style="background:#1a3a5c">🔘</div>
+        <div class="item-info">
+          <div class="item-name">Premium Linen Shirt — Navy</div>
+          <div class="item-brand">Uniqlo</div>
+          <div class="item-price">~$60</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-color" style="background:#d4b896">🔘</div>
+        <div class="item-info">
+          <div class="item-name">Linen Shorts — Beige</div>
+          <div class="item-brand">Zara</div>
+          <div class="item-price">~$55</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-color" style="background:#f5f5f5">👟</div>
+        <div class="item-info">
+          <div class="item-name">Leather Sneakers — White</div>
+          <div class="item-brand">Zara</div>
+          <div class="item-price">~$90</div>
+        </div>
+      </div>
+    </div>
+    <div class="outfit-total">
+      <span class="total-label">Outfit total</span>
+      <span class="total-price">~$205</span>
+    </div>
+    <div style="padding:12px 18px">
+      <a href="https://www.uniqlo.com/au/en/search?q=linen+shirt+navy" class="shop-btn" target="_blank">Shop Uniqlo</a>
+      <a href="https://www.zara.com/au/en/man-linen-shorts-l1059.html" class="shop-btn" target="_blank" style="margin-left:8px">Shop Zara</a>
+    </div>
+  </div>
+
+  <!-- Outfit 3: Evening Out -->
+  <div class="outfit">
+    <div class="outfit-header">
+      <div class="outfit-name">Evening Out</div>
+      <div class="outfit-occasion">Dinner / Bar</div>
+    </div>
+    <div class="items">
+      <div class="item">
+        <div class="item-color" style="background:#1a1a1a;border:1px solid #333">🔘</div>
+        <div class="item-info">
+          <div class="item-name">Slim Fit Shirt — Black</div>
+          <div class="item-brand">Uniqlo</div>
+          <div class="item-price">~$50</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-color" style="background:#2d3142">🔘</div>
+        <div class="item-info">
+          <div class="item-name">Smart Ankle Pants — Charcoal</div>
+          <div class="item-brand">Uniqlo</div>
+          <div class="item-price">~$65</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-color" style="background:#1a1a1a">👟</div>
+        <div class="item-info">
+          <div class="item-name">Leather Loafers — Black</div>
+          <div class="item-brand">Zara</div>
+          <div class="item-price">~$110</div>
+        </div>
+      </div>
+    </div>
+    <div class="outfit-total">
+      <span class="total-label">Outfit total</span>
+      <span class="total-price">~$225</span>
+    </div>
+    <div style="padding:12px 18px">
+      <a href="https://www.uniqlo.com/au/en/search?q=slim+fit+shirt+black" class="shop-btn" target="_blank">Shop Uniqlo</a>
+      <a href="https://www.zara.com/au/en/man-loafers-l1053.html" class="shop-btn" target="_blank" style="margin-left:8px">Shop Zara</a>
+    </div>
+  </div>
+
+  <!-- Outfit 4: Weekend Relax -->
+  <div class="outfit">
+    <div class="outfit-header">
+      <div class="outfit-name">Weekend Relax</div>
+      <div class="outfit-occasion">Casual</div>
+    </div>
+    <div class="items">
+      <div class="item">
+        <div class="item-color" style="background:#888">🔘</div>
+        <div class="item-info">
+          <div class="item-name">Premium Cotton T-Shirt — Grey</div>
+          <div class="item-brand">Uniqlo</div>
+          <div class="item-price">~$30</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-color" style="background:#4a5240">🔘</div>
+        <div class="item-info">
+          <div class="item-name">Linen Shorts — Olive</div>
+          <div class="item-brand">Zara</div>
+          <div class="item-price">~$55</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-color" style="background:#f5f5f5">👟</div>
+        <div class="item-info">
+          <div class="item-name">Clean Sneakers — White</div>
+          <div class="item-brand">Zara or New Balance</div>
+          <div class="item-price">~$80-120</div>
+        </div>
+      </div>
+    </div>
+    <div class="outfit-total">
+      <span class="total-label">Outfit total</span>
+      <span class="total-price">~$165</span>
+    </div>
+    <div style="padding:12px 18px">
+      <a href="https://www.uniqlo.com/au/en/search?q=supima+cotton+tshirt" class="shop-btn" target="_blank">Shop Uniqlo</a>
+      <a href="https://www.zara.com/au/en/man-linen-bermuda-l1059.html" class="shop-btn" target="_blank" style="margin-left:8px">Shop Zara</a>
+    </div>
+  </div>
+
+  <!-- Outfit 5: Casual Friday -->
+  <div class="outfit">
+    <div class="outfit-header">
+      <div class="outfit-name">Casual Friday</div>
+      <div class="outfit-occasion">Work casual / coffee</div>
+    </div>
+    <div class="items">
+      <div class="item">
+        <div class="item-color" style="background:#b8d4e8">🔘</div>
+        <div class="item-info">
+          <div class="item-name">Linen Shirt — Light Blue</div>
+          <div class="item-brand">Uniqlo</div>
+          <div class="item-price">~$60</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-color" style="background:#1a2844">🔘</div>
+        <div class="item-info">
+          <div class="item-name">Slim Chinos — Navy</div>
+          <div class="item-brand">Zara</div>
+          <div class="item-price">~$70</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="item-color" style="background:#c8a87a">👟</div>
+        <div class="item-info">
+          <div class="item-name">Suede Loafers — Tan</div>
+          <div class="item-brand">Zara</div>
+          <div class="item-price">~$110</div>
+        </div>
+      </div>
+    </div>
+    <div class="outfit-total">
+      <span class="total-label">Outfit total</span>
+      <span class="total-price">~$240</span>
+    </div>
+    <div style="padding:12px 18px">
+      <a href="https://www.uniqlo.com/au/en/search?q=linen+shirt+blue" class="shop-btn" target="_blank">Shop Uniqlo</a>
+      <a href="https://www.zara.com/au/en/man-trousers-l838.html" class="shop-btn" target="_blank" style="margin-left:8px">Shop Zara</a>
+    </div>
+  </div>
+
+</div>
+
+<div style="margin-top:24px;padding:16px;background:#1a1a1a;border-radius:8px;text-align:center">
+  <div style="color:#555;font-size:12px">All 5 outfits combined</div>
+  <div style="font-size:22px;font-weight:800;color:#c9a84c;margin:4px 0">~$1,220 total</div>
+  <div style="color:#555;font-size:12px">Size L-XL shirts | 34 pants | AU 9.5 shoes</div>
+</div>
+
+</body>
+</html>
